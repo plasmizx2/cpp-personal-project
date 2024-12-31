@@ -1,0 +1,96 @@
+
+There are numerous data structures, but they are broadly categorized into linear and non-linear types. Below is a list of the most common ones, grouped by their types:
+
+1. Linear Data Structures
+In these, data elements are arranged in a sequence.
+
+Array
+Fixed-size collection of elements.
+Types: 1D, 2D, and Multidimensional Arrays.
+
+Linked List
+Nodes connected via pointers.
+Types:
+Singly Linked List
+Doubly Linked List
+Circular Linked List
+
+
+Stack
+Last In, First Out (LIFO) structure.
+Applications: Backtracking, undo functionality.
+
+Queue
+First In, First Out (FIFO) structure.
+Variants:
+Simple Queue
+Circular Queue
+Priority Queue
+Double-Ended Queue (Deque)
+
+2. Non-Linear Data Structures
+In these, data elements are not arranged sequentially.
+
+Trees
+Hierarchical structure with parent and child nodes.
+Types:
+Binary Tree
+Binary Search Tree (BST)
+AVL Tree (Self-Balancing BST)
+Heap (Min-Heap, Max-Heap)
+B-Trees, B+ Trees
+Trie (Prefix Tree)
+
+Graphs
+Collection of nodes (vertices) connected by edges.
+Representations:
+    Adjacency Matrix
+    Adjacency List
+Types:
+    Directed and Undirected Graphs
+    Weighted and Unweighted Graphs
+    Cyclic and Acyclic Graphs
+
+
+3. Hash-Based Data Structures
+Efficient for searching, insertion, and deletion.
+
+Hash Table
+    Stores key-value pairs.
+    Handles collisions using techniques like chaining or open addressing.
+Hash Map
+    Advanced version of a hash table, used in languages like Java.
+
+4. Advanced and Specialized Data Structures
+Designed for specific use cases.
+
+Disjoint Set (Union-Find)
+    Used in graph algorithms like Kruskal’s.
+
+Segment Tree
+    Efficient for range queries and updates.
+
+Fenwick Tree (Binary Indexed Tree)
+    Optimized for prefix sums and updates.
+
+Trie
+    Special tree for string or prefix matching.
+
+Skip List
+    Alternative to balanced trees.
+
+Suffix Tree
+    Used for string matching problems.
+
+Sparse Table
+    Used for static range queries.
+
+5. Other Data Structures
+Matrix
+    Used for mathematical and scientific computations.
+
+Deque
+    Double-ended queue, supporting insertion and deletion at both ends.
+    
+Priority Queue
+    Elements prioritized based on criteria (min-heap or max-heap).

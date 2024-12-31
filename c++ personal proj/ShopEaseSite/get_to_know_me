@@ -1,0 +1,31 @@
+Shopper Profile
+├── Age Groups
+│   ├── Teenagers (13-19 years)
+│   ├── Young Adults (20-34 years)
+│   ├── Middle-Aged Adults (35-54 years)
+│   └── Older Adults (55+ years)
+├── Gender
+│   ├── Male
+│   ├── Female
+│   ├── Non-Binary
+│   └── Prefer Not to Say
+├── Location (U.S. Time Zones)
+│   ├── Eastern Time Zone (ET)
+│   ├── Central Time Zone (CT)
+│   ├── Mountain Time Zone (MT)
+│   └── Pacific Time Zone (PT)
+├── Income Level
+│   ├── Low Income (Under $35,000 per year)
+│   ├── Lower Middle Income ($35,000 - $74,999 per year)
+│   ├── Upper Middle Income ($75,000 - $149,999 per year)
+│   └── High Income ($150,000+ per year)
+├── Education Level
+│   ├── High School Diploma or Less
+│   ├── Some College or Associate Degree
+│   ├── Bachelor’s Degree
+│   └── Graduate or Professional Degree
+└── Occupation
+    ├── Blue-Collar Jobs
+    ├── White-Collar Jobs
+    ├── Entrepreneurs/Small Business Owners
+    └── Unemployed/Retired

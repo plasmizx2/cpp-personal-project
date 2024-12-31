@@ -1,0 +1,116 @@
+====================================
+Customer Scoring System
+====================================
+
+1. DEMOGRAPHICS (Max: 20 Points)
+------------------------------------
+- Age:
+  - Teenagers (13-19 years): 1 Point
+  - Young Adults (20-34 years): 2 Points
+  - Middle-Aged Adults (35-54 years): 3 Points
+  - Older Adults (55+ years): 4 Points
+- Gender:
+  - Male: 1 Point
+  - Female: 1 Point
+  - Non-Binary: 2 Points
+  - Prefer Not to Say: 0 Points
+- Location (Time Zone):
+  - Eastern (ET): 2 Points
+  - Central (CT): 2 Points
+  - Mountain (MT): 1 Point
+  - Pacific (PT): 1 Point
+- Income Level:
+  - Low (Under $35,000): 1 Point
+  - Lower Middle ($35,000 - $74,999): 2 Points
+  - Upper Middle ($75,000 - $149,999): 3 Points
+  - High ($150,000+): 4 Points
+
+------------------------------------
+
+2. SHOPPING BEHAVIOR (Max: 15 Points)
+------------------------------------
+- Frequency of Shopping:
+  - Frequent Shopper: 5 Points
+  - Occasional Buyer: 3 Points
+  - Sale-Only Shopper: 1 Point
+- Channels Used:
+  - Online: 3 Points
+  - In-Store: 2 Points
+  - Both: 5 Points
+- Peak Shopping Times:
+  - Weekdays: 2 Points
+  - Weekends: 3 Points
+  - Sale Events: 5 Points
+
+------------------------------------
+
+3. PURCHASE HISTORY (Max: 15 Points)
+------------------------------------
+- Types of Products Bought:
+  - Electronics: 5 Points
+  - Fashion: 3 Points
+  - Groceries: 2 Points
+  - Other: 1 Point
+- Average Spend per Transaction:
+  - Under $50: 1 Point
+  - $50-$100: 2 Points
+  - $100-$500: 3 Points
+  - Over $500: 5 Points
+- Brand Loyalty:
+  - Yes: 5 Points
+  - No: 0 Points
+
+------------------------------------
+
+4. ONLINE BEHAVIOR (Max: 10 Points)
+------------------------------------
+- Browsing Patterns:
+  - High Engagement: 5 Points
+  - Medium Engagement: 3 Points
+  - Low Engagement: 1 Point
+- Wishlist/Add-to-Cart Usage:
+  - Frequently Adds Items: 5 Points
+  - Occasionally Adds Items: 3 Points
+  - Rarely Adds Items: 1 Point
+- Social Media Influence:
+  - Highly Influenced: 5 Points
+  - Moderately Influenced: 3 Points
+  - Not Influenced: 1 Point
+
+------------------------------------
+
+5. FEEDBACK AND REVIEWS (Max: 10 Points)
+------------------------------------
+- Provides Feedback:
+  - Yes: 5 Points
+  - No: 0 Points
+- Tone of Reviews:
+  - Positive: 5 Points
+  - Neutral: 3 Points
+  - Negative: 0 Points
+- Constructive Feedback Provided:
+  - Yes: 5 Points
+  - No: 0 Points
+
+------------------------------------
+
+6. PROMOTION SENSITIVITY (Max: 10 Points)
+------------------------------------
+- Sensitivity to Discounts:
+  - High: 5 Points
+  - Medium: 3 Points
+  - Low: 1 Point
+- Participation in Sales:
+  - Yes: 5 Points
+  - No: 0 Points
+
+------------------------------------
+
+TOTAL SCORE: _________ / 80
+
+Customer Type (Based on Score):
+------------------------------------
+- 0-20: Casual Shopper
+- 21-40: Moderate Shopper
+- 41-60: Engaged Shopper
+- 61-80: VIP Shopper

@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #0074d9;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #0074d9, #7fdbff);
+    color: white;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+}
+
+#hero .btn {
+    background: #ff4136;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Features Section */
+#features {
+    padding: 2rem;
+    background: #ffffff;
+}
+
+.feature-box {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+/* How It Works Section */
+#how-it-works {
+    padding: 2rem;
+    background: #eef;
+}
+
+#how-it-works ol {
+    margin: 0;
+    padding: 0 1.5rem;
+}
+
+/* Profiles Section */
+#profiles {
+    padding: 2rem;
+    background: #ffffff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #0074d9;
+    color: white;
+}
