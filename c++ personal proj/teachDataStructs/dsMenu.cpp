@@ -6,6 +6,7 @@
 
 int main(){
     std::cout << "|====================================|\n";
+    std::cout << "| Learn Arrays - (1)                 |\n";
     std::cout << "| Learn Linked List - (0)            |\n";
     std::cout << "| Exit - (-1)                        |\n";
     std::cout << "|====================================|\n";
