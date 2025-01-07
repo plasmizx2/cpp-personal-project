@@ -3,31 +3,42 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-template <typename typeTemp,int length> // using a template for the class allows us to choose the data type for the array we are gonna implement and also using length allows us 
+template <typename T,int length> // using a template for the class allows us to choose the data type for the array we are gonna implement and also using length allows us 
                                         // to choose the amount of memory we want to allocate for the length so the max length
+                                        //T stands for temple type essintally.
 class Array{  
 
 private:
-    typeTemp array[length]; // 
+    T array[length]; // 
     int currentSize;
 public:
-    Array(typeTemp* arr,int listSize){// arrays are usually used with pointers learn more ABOUT THIS
+
+    Array(T* arr,int listSize){// arrays are usually used with pointers learn more ABOUT THIS
     if(listSize > length){
         std::cout<< "The List size was too big for the array\n";
+        currentSize = 0;
     }
+
     else{
-        std::cout<< "The List size was not too big for the array\n";
+        std::cout<< "The List size fits inside the array\n";
         for(int i = 0;i < listSize;i++){
             array[i] = arr[i];
+            
         }
+        currentSize = listSize;
+
     }
     }
 
+    void displayArray() const;
 
+};
 
-    void displayArray(){
+//Must tell the complier the function thats outside the class is a template function not a regular one.
+template <typename T,int length>
+void Array<T,length>::displayArray(){ //void is the return type then call the Array class with the template parameter of T which is the data type chosen and of length size.
         for(int i = 0;i < currentSize;i++){
-            std::cout << arr2display[i] << ",";
+            std::cout << array[i] << ",";
         }
         std::cout << "\n";
         std::cout << "The size of your list currently is: " << currentSize;
@@ -35,13 +46,11 @@ public:
         }    
     
 
-    typeTemp addDel(Array& array){
+
+
+    T addDel(Array& array){
 
     }
-
-
-};
-
 
 
 
