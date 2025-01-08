@@ -32,6 +32,8 @@ public:
 
     void displayArray() const;
 
+    T addDel();
+
 };
 
 //Must tell the complier the function thats outside the class is a template function not a regular one.
@@ -47,10 +49,30 @@ void Array<T,length>::displayArray(){ //void is the return type then call the Ar
     
 
 
-
-    T addDel(Array& array){
-
+template <typename T,int length> 
+T Array<T,length>::addDel(Array& array){
+    
+    std::cout << "If you would like to DELETE something from the array please type (-)\n";
+    std::cout << "If you would like to ADD something to the array please type (+)"
+    std::string add_del_choice;
+    std::cin >> add_del_choice;
+    if(add_del_choice == "-" || add_del_choice == "DELETE"||add_del_choice == "delete" || add_del_choice == "DEL"||add_del_choice == "del"){
+        displayArray();
+        std::cout<< "Now that you have seen the array what number would you like to delete?" //THIS IS WHAT NEEDS TO BE WORKED ON ASAP.
     }
+
+
+    else if(add_del_choice == "+" || add_del_choice == "ADD"||add_del_choice == "add"){
+        
+    }
+
+
+
+    else{
+        "You didnt properly chose what you wanted to do to the array for safety reasons we are going to bring you back to the menu."
+        arrayMenu();
+    }
+}
 
 
 
