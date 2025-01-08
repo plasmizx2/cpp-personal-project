@@ -40,7 +40,8 @@ public:
 template <typename T,int length>
 void Array<T,length>::displayArray(){ //void is the return type then call the Array class with the template parameter of T which is the data type chosen and of length size.
         for(int i = 0;i < currentSize;i++){
-            std::cout << array[i] << ",";
+            std::cout << array[i];
+            std::cout << "Postion - " << i << ",";
         }
         std::cout << "\n";
         std::cout << "The size of your list currently is: " << currentSize;
@@ -56,12 +57,29 @@ T Array<T,length>::addDel(Array& array){
     std::cout << "If you would like to ADD something to the array please type (+)"
     std::string add_del_choice;
     std::cin >> add_del_choice;
+
     if(add_del_choice == "-" || add_del_choice == "DELETE"||add_del_choice == "delete" || add_del_choice == "DEL"||add_del_choice == "del"){
         displayArray();
-        std::cout<< "Now that you have seen the array what number would you like to delete?" //THIS IS WHAT NEEDS TO BE WORKED ON ASAP.
+        std::cout<< "Now that you have seen the array please list the postion you want to delete?" //THIS IS WHAT NEEDS TO BE WORKED ON ASAP.
+        int positionDel;
+        std::cin >> positionDel;
+
+
+        if(positionDel < currentSize && postionDel > 0){
+            for(int i = 0;i < currentSize;i++){
+           if(positionDel == i){ // work on asap have it make a new array and re assign without that value. 
+
+           }
+        }
+        }
+
+        
+        else{
+            std::cout<< "It seems You went out of bounds or typed a character incorectly." << std::endl;
+        }
     }
 
-
+ 
     else if(add_del_choice == "+" || add_del_choice == "ADD"||add_del_choice == "add"){
         
     }
@@ -77,11 +95,6 @@ T Array<T,length>::addDel(Array& array){
 
 
 
-
-
-void Array::setElement(){
-
-}
 
 
 Key Components of the Array Class
