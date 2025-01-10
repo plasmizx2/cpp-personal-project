@@ -52,43 +52,75 @@ void Array<T,length>::displayArray(){ //void is the return type then call the Ar
 
 template <typename T,int length> 
 T Array<T,length>::addDel(Array& array){
-    
+    bool fullResetInitiate = true
+    while(fullResetInitiate){
     std::cout << "If you would like to DELETE something from the array please type (-)\n";
     std::cout << "If you would like to ADD something to the array please type (+)"
     std::string add_del_choice;
     std::cin >> add_del_choice;
+   
 
     if(add_del_choice == "-" || add_del_choice == "DELETE"||add_del_choice == "delete" || add_del_choice == "DEL"||add_del_choice == "del"){
         displayArray();
-        std::cout<< "Now that you have seen the array please list the postion you want to delete?" //THIS IS WHAT NEEDS TO BE WORKED ON ASAP.
+        std::cout<< "Now that you have seen the array please list the postion of the item you want to delete?"
         int positionDel;
         std::cin >> positionDel;
 
-
-        if(positionDel < currentSize && postionDel > 0){
-            for(int i = 0;i < currentSize;i++){
-           if(positionDel == i){ // work on asap have it make a new array and re assign without that value. 
-
-           }
+        if(postionDel >= 0 && positionDel < currentSize ){
+            //shift elements to the left.
+            array[positionDel] = ' '; // changing all deleted characters to a space
+            for(int i = positionDel ;i < currentSize - 1;i++){
+                array[i] = array[i+1]; 
+            }
         }
-        }
-
         
         else{
-            std::cout<< "It seems You went out of bounds or typed a character incorectly." << std::endl;
+            std::cout<< "It seems You went out of bounds or typed a character incorectly." << std::endl; // START HERE
+            std::cout<< "Please try again\n";
+            fullResetInitiate = true;
         }
     }
 
  
+
     else if(add_del_choice == "+" || add_del_choice == "ADD"||add_del_choice == "add"){
+        for(int i = currentSize - 1;i <= currentSize;i--){
+            if(array[i] == ' '){
+                std::cout<< "Theres space for you to add a number!\n";
+                break;
+            }
+            else{
+                std::cout<<"Theres is no space for you to add a number, you will be sent back, please delete a value first!\n";
+                fullResetInitiate = true;
+            }
+        }
+        displayArray();
+        std::cout<< "Now that you have seen the array please list the postion of the item you want to add?\n";
+        int valeueToAdd;
+        for(int i = 0;i < currentSize;i++){
+            if(array[i] == ' '){
+                array[i] = valeueToAdd;
+                std::cout<< "We added you value to the end of the list!\n";
+            }
+        }
+        
+
         
     }
 
 
 
     else{
-        "You didnt properly chose what you wanted to do to the array for safety reasons we are going to bring you back to the menu."
-        arrayMenu();
+        std::cout<<"Would you like to go to menu or continue with modyifying your array? (m - menu)(a - array)\n";
+        std::string menuOrArray;
+        if(menuOrArray == 'm' || menuOrArray == 'M'){
+            main();
+        }
+        else if(menuOrArray == 'n' || menuOrArray == 'N'){
+            fullResetInitiate = true;
+        }
+        
+    }
     }
 }
 
