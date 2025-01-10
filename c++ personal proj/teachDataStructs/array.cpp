@@ -55,7 +55,7 @@ T Array<T,length>::addDel(Array& array){
     bool fullResetInitiate = true
     while(fullResetInitiate){
     std::cout << "If you would like to DELETE something from the array please type (-)\n";
-    std::cout << "If you would like to ADD something to the array please type (+)"
+    std::cout << "If you would like to ADD something to the array please type (+)";
     std::string add_del_choice;
     std::cin >> add_del_choice;
    
@@ -81,8 +81,6 @@ T Array<T,length>::addDel(Array& array){
         }
     }
 
- 
-
     else if(add_del_choice == "+" || add_del_choice == "ADD"||add_del_choice == "add"){
         for(int i = currentSize - 1;i <= currentSize;i--){
             if(array[i] == ' '){
@@ -91,7 +89,7 @@ T Array<T,length>::addDel(Array& array){
             }
             else{
                 std::cout<<"Theres is no space for you to add a number, you will be sent back, please delete a value first!\n";
-                fullResetInitiate = true;
+                fullResetInitiate = true;   
             }
         }
         displayArray();
@@ -100,18 +98,15 @@ T Array<T,length>::addDel(Array& array){
         for(int i = 0;i < currentSize;i++){
             if(array[i] == ' '){
                 array[i] = valeueToAdd;
-                std::cout<< "We added you value to the end of the list!\n";
+                std::cout<< "We added your value to the end of the list!\n";
+                break;
             }
         }
-        
-
-        
+        currentSize++;
     }
 
-
-
     else{
-        std::cout<<"Would you like to go to menu or continue with modyifying your array? (m - menu)(a - array)\n";
+        std::cout << "Would you like to go to menu or continue with modyifying your array? (m - menu)(a - array)\n";
         std::string menuOrArray;
         if(menuOrArray == 'm' || menuOrArray == 'M'){
             main();
@@ -124,6 +119,42 @@ T Array<T,length>::addDel(Array& array){
     }
 }
 
+
+template<typename T ,int length>
+T Array<T,length>::changeElements(Array& array){
+    std::cout<<"You have chose to change an element(s)\n";
+    std::cout<<"Below is all of the elements along with there postion!\n";
+    std::cout<<"______________________________________________________\n";
+    displayArray();
+    while(true)
+        std::cout<<"Please list how many items you want to change. If you dont know yet you can still choose later!";
+        int amount2Change;
+        std::cin>>amount2Change;
+
+        for(int i = 0;i < amount2Change;i++){
+
+            int postionChosen
+            std::cout<<"What is the postion of the current value you would like to change?\n";
+            std::cin >> postionChosen;
+            for(int currentValue = 0; currentValue < currentSize;currentValue++){
+                if(postionChosen != currentValue){
+                    continue;
+                }
+                else{
+                    T newValue;
+                    std::cout<<"Please list what you would like the new values to be!\n";
+                    std::cin>> newValue;
+                    array[currentValue] = newValue;
+                    break;
+                }
+            }
+        }
+        if(i == amount2Change - 1){
+            continue;
+            }
+
+}
+//mAKE NEXT FUNCTION
 
 
 
