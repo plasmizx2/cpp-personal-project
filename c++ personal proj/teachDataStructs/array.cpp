@@ -12,6 +12,12 @@ private:
     T array[length]; // 
     int currentSize;
 public:
+     Array() {
+        currentSize = 0;  // Initialize current size to 0
+        for (int i = 0; i < length; i++) {
+            array[i] = T();  // Default-initialize each element
+        }
+    }
 
     Array(T* arr,int listSize){// arrays are usually used with pointers learn more ABOUT THIS
     if(listSize > length){
@@ -154,7 +160,28 @@ T Array<T,length>::changeElements(Array& array){
             }
 
 }
-//mAKE NEXT FUNCTION
+
+//dynamically allocate the memory when using this function as its with arrays.
+template<typename T, int length>
+T** Array<T,length>::matrix2DInitiation(Array& array1,Array& array2){
+    std::cout<<"Now that youve given me your row and columns\n";
+
+    T** matrix = new T*[array1.currentSize];  // Allocate rows
+    for (int i = 0; i < array1.currentSize; i++) {
+        matrix[i] = new T[array2.currentSize];  // Allocate columns for each row
+
+
+        for (int j = 0; j < array2.currentSize; j++) {
+            matrix[i][j] = i + j;  // Initialize with a value
+        }
+}
+
+
+    
+
+    
+
+}
 
 
 
@@ -165,14 +192,10 @@ Attributes:
 Store the data (array or matrix) using std::vector or raw arrays.
 Track dimensions for matrices (rows and columns).
 Methods:
-Basic Operations:
-Create/initialize an array or matrix.
-Access and modify elements.
 Matrix Operations:
 Transpose.
 Addition, multiplication.
 Check if square or identity matrix.
-Calculate determinants (optional, for deeper learning).
 Utility Functions:
 Print the matrix.
 Resize the array/matrix.
@@ -218,7 +241,8 @@ void arrayMenu(){
             displayNodes(list.head);
             break;
         case 4:
-            reverseList();
+            std::cout<<"you have chosen to make a 2d matrix! Please list your row and columns list\n";
+            matrix2DInitiation(array1,array2)
             break;
         case 5:
             std::cout<< "Please enter the value you would like to delete\n";
