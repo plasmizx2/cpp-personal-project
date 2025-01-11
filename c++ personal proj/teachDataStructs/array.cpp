@@ -165,16 +165,20 @@ T Array<T,length>::changeElements(Array& array){
 template<typename T, int length>
 T** Array<T,length>::matrix2DInitiation(Array& array1,Array& array2){
     std::cout<<"Now that youve given me your row and columns\n";
-
-    T** matrix = new T*[array1.currentSize];  // Allocate rows
-    for (int i = 0; i < array1.currentSize; i++) {
-        matrix[i] = new T[array2.currentSize];  // Allocate columns for each row
-
-
-        for (int j = 0; j < array2.currentSize; j++) {
-            matrix[i][j] = i + j;  // Initialize with a value
+    // need to allocate new memory for the array that will hold pointers
+   T** matrixRow = new T*[array1.currentSize] // T** (double pointer of said dataType) the row(matrixRow) (T*) the new memory is made to to make an array of T data type of the size of the array1.currentSize
+   for(int i = 0;i <array1.currentSize;i++){
+    matrixRow[i] = new T*[array2.currentSize] //now access each element/pointer inside of the array of pointers 
+    // My def is its an array (double pointer) with each element inside of it pointing to another array thus creating the matrix
+   }
+    std::cout<< "Matrix has been made here it is!\n";
+    for(int j = 0;j < array1.currentSize;j++){
+        for(int k = 0;k < array2.currentSize;k++){
+            std::cout<< matrix[j][k];
         }
-}
+    }
+   
+
 
 
     
