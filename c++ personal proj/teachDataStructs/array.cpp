@@ -172,25 +172,23 @@ T** Array<T,length>::matrix2DInitiation(Array& array1,Array& array2){
     // My def is its an array (double pointer) with each element inside of it pointing to another array thus creating the matrix
    }
     std::cout<< "Matrix has been made here it is!\n";
-    for(int j = 0;j < array1.currentSize;j++){
-        for(int k = 0;k < array2.currentSize;k++){
+    return matrixRow;
+}
+
+template<typename T, int length>
+T** Array<T,length>::matrixDisplay(T** matrixRow,int row,int column){ // row and column would be input as array1.currentSize and column would be input as array2.currentSize
+    for(int j = 0;j < row;j++){
+        for(int k = 0;k < column;k++){
             std::cout<< matrix[j][k];
         }
+        std::cout<<"\n";
     }
-   
-
-
-
-    
-
-    
-
 }
 
 
 
 
-
+   
 Key Components of the Array Class
 Attributes:
 Store the data (array or matrix) using std::vector or raw arrays.
