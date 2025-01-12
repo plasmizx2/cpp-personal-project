@@ -42,6 +42,43 @@ public:
 
 };
 
+template <typename T, int length>
+void Array<T, length>::makeAnArray() {
+    int choice;
+    std::cout << "Do you have an array to work with?\n";
+    std::cout << "1. Yes, I have an array.\n";
+    std::cout << "2. No, I want to create a new array.\n";
+    std::cout << "Enter your choice: ";
+    std::cin >> choice;
+
+    if (choice == 1) {
+        // User already has an array
+        int size;
+        std::cout << "Enter the size of your existing array (max " << length << "): ";
+        std::cin >> size;
+
+        if (size <= 0 || size > length) {
+            std::cout << "Invalid size! Please enter a size between 1 and " << length << ".\n";
+            return;
+        }
+
+        currentSize = size;
+        std::cout << "Enter " << size << " values for your array:\n";
+        for (int i = 0; i < size; i++) {
+            std::cin >> array[i];
+        }
+        std::cout << "Array initialized successfully!\n";
+    } else if (choice == 2) {
+        // User wants to create a new array
+        currentSize = 0;
+        std::cout << "You can now add elements to your new array using the 'Add or Delete Element' option.\n";
+    } else {
+        std::cout << "Invalid choice! Returning to the menu.\n";
+    }
+}
+
+
+
 //Must tell the complier the function thats outside the class is a template function not a regular one.
 template <typename T,int length>
 void Array<T,length>::displayArray(){ //void is the return type then call the Array class with the template parameter of T which is the data type chosen and of length size.
@@ -240,41 +277,94 @@ T** Array<T,length>::transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColu
     return newMatrix;
 }
 
-void displayArrayMenu(){
+
+int displayArrayMenu(){
     std::cout << "\n----- Linked List Menu -----\n";
     std::cout << "|============================|\n";
+    std::cout << "|0. Make Array               |\n";
     std::cout << "|1. Display Array            |\n";
     std::cout << "|2. Add or Delete Element    |\n";
-    std::cout << "|3. change Elements          |\n";
-    std::cout << "|4. matrix 2D Initiation     |\n";
-    std::cout << "|5. Delete Node by Value     |\n";
-    std::cout << "|6. Search for a Value       |\n";
-    std::cout << "|7. Get List Length          |\n";
-    std::cout << "|8. Get N-th Node            |\n";
+    std::cout << "|3. Change Elements          |\n";
+    std::cout << "|4. Matrix 2D Initiation     |\n";
+    std::cout << "|5. Matrix Display           |\n";
+    std::cout << "|6. Matrix Change Elements   |\n";
+    std::cout << "|7. Transpose Current Matrix |\n";
+    std::cout << "|8. Main Menu                |\n";
     std::cout << "|9. Exit                     |\n";
     std::cout << "|============================|\n";
     std::cout << "\n";
     std::cout << "Enter your choice: \n";
+    int choice;
+    std::cin >> choice;
+    return choice;
+}
+
+
+void arrayMenu(){
+    std::cout << "\nWelcome to the Array Menu!\n";
+    std::cout << "|============================|\n";
+    std::cout << "|0. Integers                 |\n";
+    std::cout << "|1. Doubles                  |\n";
+    std::cout << "|2. Floats                   |\n";
+    std::cout << "|3. Strings                  |\n";
+    std::cout << "|4. Characters               |\n";
+    std::cout << "|5. Main Menu                |\n";
+    std::cout << "|6. Exit Program             |\n";
+    std::cout << "|============================|\n";
+    std::cout << "\n";
+    std::cout << "Enter your choice: \n";
+    int choice;
+    std::cin >> choice;
+    
+
+    switch (choice)
+    {
+    case 0:
+        Array<int,100> intArray;
+        
+        break;
+    case 1:
+        Array<double,100> dubArray;
+
+        break;
+    case 2:
+        Array<float,100> floatArray;
+
+        break;
+    case 3:
+        Array<std::string,100> stringArray;
+
+        break;
+    case 4:
+        Array<char,100> charArray;
+
+        break;
+    case 5:
+        break;
+    case 6:
+        break;
+    
+    default:
+        break;
+    }
 }
 
 
 
 
 
-
-void arrayMenu(){
-
-    startEmptyFilled(list);   
+void arrayMenuOperations(){
     while(true){
-        int choice,value,nth;
-        
-        displayMenu();
-
-        std::cin >> choice;
+        makeAnArray()
+        choice = displayArrayMenu();
 
         switch (choice)
         {
+        case 0:
+            makeAnArray();
+            break;   
         case 1:
+            
             displayArray();
             break;
         case 2:
@@ -298,6 +388,9 @@ void arrayMenu(){
             break;
         case 8:
             mainMenu();
+            break;
+        case 9:
+            exitProgram();
             break;
         
         default:
