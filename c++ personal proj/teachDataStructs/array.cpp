@@ -77,8 +77,6 @@ void Array<T, length>::makeAnArray() {
     }
 }
 
-
-
 //Must tell the complier the function thats outside the class is a template function not a regular one.
 template <typename T,int length>
 void Array<T,length>::displayArray(){ //void is the return type then call the Array class with the template parameter of T which is the data type chosen and of length size.
@@ -91,8 +89,6 @@ void Array<T,length>::displayArray(){ //void is the return type then call the Ar
             
         }    
     
-
-
 template <typename T,int length> 
 T Array<T,length>::addDel(Array& array){
     bool fullResetInitiate = true
@@ -161,7 +157,6 @@ T Array<T,length>::addDel(Array& array){
     }
     }
 }
-
 
 template<typename T ,int length>
 T Array<T,length>::changeElements(Array& array){
@@ -257,7 +252,6 @@ T** Array<T,length>::matrixChangeElements(T** matrix,int currentRow,int currentC
 
 }
 
-
 template<typename T, int length>
 T** Array<T,length>::transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColumn){
     int newRow = oldColumn;
@@ -278,7 +272,75 @@ T** Array<T,length>::transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColu
 }
 
 
-int displayArrayMenu(){
+
+int displayDataTypes(){
+    std::cout << "\nWelcome to the Array Menu!\n";
+    std::cout << "|============================|\n";
+    std::cout << "|0. Integers                 |\n";
+    std::cout << "|1. Doubles                  |\n";
+    std::cout << "|2. Floats                   |\n";
+    std::cout << "|3. Strings                  |\n";
+    std::cout << "|4. Characters               |\n";
+    std::cout << "|5. Main Menu                |\n";
+    std::cout << "|6. Exit Program             |\n";
+    std::cout << "|============================|\n";
+    std::cout << "\n";
+    std::cout << "Enter your choice: \n";
+    int dataTypeChoice;
+    std::cin >> dataTypeChoice;
+    return dataTypeChoice;
+}
+
+void arrayMenu(){
+    int dataTypeChoice = displayDataTypes();
+    switch (dataTypeChoice){
+
+    case 0:
+        std::cout<< "You chose integers!\n";
+        Array<int,100> intArray;
+        intArray.makeAnArray(); // inside the makeAnArray function theres a current size part if you are making a new one it will just put it at 0 so it sets up the current size as 0 and initalizes the array for it 
+                                // if it already is a setup array it will ask the size of it and pass it through
+        arrayMenuOperations(intArray, int size) // WORK ON THIS U NEED A FUNCTION TO GET THE SIZE OF THE CURRENT ARRAY THIS IS BECASUE .CURRENTSIZE IS PRIVATE U CNT USE THAT DONT FORGET.
+        break;
+    case 1:
+        std::cout<< "You chose an doubles!\n";
+        Array<double,100> dubArray;
+        doubleArray.makeAnArray();
+        arrayMenuOperations(doubleArray, int size)
+        break;
+    case 2:
+        std::cout<< "You chose an floats!\n";
+        Array<float,100> floatArray;
+        floatArray.makeAnArray();
+        arrayMenuOperations(floatArray, int size)
+        break;
+    case 3:
+        std::cout<< "You chose an strings!\n";
+        Array<std::string,100> stringArray;
+        stringArray.makeAnArray();
+        arrayMenuOperations(stringArray, int size)
+        break;
+    case 4:
+        std::cout<< "You chose an characters!\n";
+        Array<char,100> charArray;
+        charArray.makeAnArray();
+        arrayMenuOperations(charArray, int size)
+        break;
+    case 5:
+        break;
+    case 6:
+        break;
+    
+    default:
+        break;
+    }
+}
+
+
+
+
+
+void arrayMenuOperations(Array<T, length>& array, int size){ // The way the parameters works u put in a object of type Array it starts as empty from the default construcotr until someone populates it the size starts at 0 as well
     std::cout << "\n----- Linked List Menu -----\n";
     std::cout << "|============================|\n";
     std::cout << "|0. Make Array               |\n";
@@ -296,64 +358,6 @@ int displayArrayMenu(){
     std::cout << "Enter your choice: \n";
     int choice;
     std::cin >> choice;
-    return choice;
-}
-
-
-void arrayMenu(){
-    std::cout << "\nWelcome to the Array Menu!\n";
-    std::cout << "|============================|\n";
-    std::cout << "|0. Integers                 |\n";
-    std::cout << "|1. Doubles                  |\n";
-    std::cout << "|2. Floats                   |\n";
-    std::cout << "|3. Strings                  |\n";
-    std::cout << "|4. Characters               |\n";
-    std::cout << "|5. Main Menu                |\n";
-    std::cout << "|6. Exit Program             |\n";
-    std::cout << "|============================|\n";
-    std::cout << "\n";
-    std::cout << "Enter your choice: \n";
-    int choice;
-    std::cin >> choice;
-    
-
-    switch (choice)
-    {
-    case 0:
-        Array<int,100> intArray;
-        
-        break;
-    case 1:
-        Array<double,100> dubArray;
-
-        break;
-    case 2:
-        Array<float,100> floatArray;
-
-        break;
-    case 3:
-        Array<std::string,100> stringArray;
-
-        break;
-    case 4:
-        Array<char,100> charArray;
-
-        break;
-    case 5:
-        break;
-    case 6:
-        break;
-    
-    default:
-        break;
-    }
-}
-
-
-
-
-
-void arrayMenuOperations(){
     while(true){
         makeAnArray()
         choice = displayArrayMenu();
@@ -361,7 +365,7 @@ void arrayMenuOperations(){
         switch (choice)
         {
         case 0:
-            makeAnArray();
+            
             break;   
         case 1:
             
