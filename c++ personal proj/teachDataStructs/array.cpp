@@ -240,7 +240,22 @@ T** Array<T,length>::transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColu
     return newMatrix;
 }
 
-
+void displayArrayMenu(){
+    std::cout << "\n----- Linked List Menu -----\n";
+    std::cout << "|============================|\n";
+    std::cout << "|1. Display Array            |\n";
+    std::cout << "|2. Add or Delete Element    |\n";
+    std::cout << "|3. change Elements          |\n";
+    std::cout << "|4. matrix 2D Initiation     |\n";
+    std::cout << "|5. Delete Node by Value     |\n";
+    std::cout << "|6. Search for a Value       |\n";
+    std::cout << "|7. Get List Length          |\n";
+    std::cout << "|8. Get N-th Node            |\n";
+    std::cout << "|9. Exit                     |\n";
+    std::cout << "|============================|\n";
+    std::cout << "\n";
+    std::cout << "Enter your choice: \n";
+}
 
 
 
