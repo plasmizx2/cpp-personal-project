@@ -166,9 +166,9 @@ template<typename T, int length>
 T** Array<T,length>::matrix2DInitiation(Array& array1,Array& array2){
     std::cout<<"Now that youve given me your row and columns\n";
     // need to allocate new memory for the array that will hold pointers
-   T** matrixRow = new T*[array1.currentSize] // T** (double pointer of said dataType) the row(matrixRow) (T*) the new memory is made to to make an array of T data type of the size of the array1.currentSize
+   T** matrixRow = new T*[array1.currentSize]; // T** (double pointer of said dataType) the row(matrixRow) (T*) the new memory is made to to make an array of T data type of the size of the array1.currentSize
    for(int i = 0;i <array1.currentSize;i++){
-    matrixRow[i] = new T*[array2.currentSize] //now access each element/pointer inside of the array of pointers 
+    matrixRow[i] = new T[array2.currentSize]; //now access each element/pointer inside of the array of pointers 
     // My def is its an array (double pointer) with each element inside of it pointing to another array thus creating the matrix
    }
     std::cout<< "Matrix has been made here it is!\n";
@@ -184,31 +184,61 @@ T** Array<T,length>::matrixDisplay(T** matrixRow,int row,int column){ // row and
         std::cout<<"\n";
     }
 }
+//dont forget  Array<T,length> t and length can be named anything
+template<typename T,int length>
+T** Array<T,length>::matrixChangeElements(T** matrix,int currentRow,int currentColumn){
+    while(true){ 
+
+    T rowToChange;
+    T columnToChange;
+    T newValue;
+    std::cout<<"Heres your current matrix,\n";
+    matrixDisplay(matrix,currentRow,currentColumn);
+    std::cout<<"Heres your current matrix,\n";
+    std::cout<<"Please enter the row from which the element you want to change.\n"
+    std::cin >> rowToChange;
+    std::cout<<"Please enter the column from which the element you want to change.\n"
+    std::cin >> columnToChange;
+    std::cout<<"Please enter the value you want to change in row:"<<rowToChange" and column:"<<columnToChange"\n";
+    std::cin >> newValue;
+
+    matrix[rowToChange][columnToChange] = newValue;
+
+    std::cout<<"Would you like to change anything else: (Y/N)";
+    std::string restartChoice;
+    if(restartChoice == 'y'||restartChoice == 'Y'){
+        continue;
+    }
+    else if(restartChoice == 'n'||restartChoice == 'N'){
+        return matrix;
+    }
+    else{
+        std::cout<<"You typed neither (Y/N), for safety reasons we will save youre matrix as is and end changing it.\n"
+        return matrix;
+    }
+    }
+
+}
 
 
+template<typename T, int length>
+T** Array<T,length>::transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColumn){
+    int newRow = oldColumn;
+    int newColumn = oldRow;
 
+    T** newMatrix = new T*[newRow];
+    for(int i = 0;i < newRow;i++){
+        newMatrix[i] = new T[newColumn];
+    }
+//transpose it by using the old row and column to switch the i and j elemnts.
+    for(int i = 0;i<oldRow;i++){
+        for(int j = 0;j<oldColumn;j++){
+            newMatrix[j][i] = oldMatrix[i][j] // to switch it you need to have the column and row switched of whatever was there for the old matrix!
+        }
+    }
 
-   
-Key Components of the Array Class
-Attributes:
-Store the data (array or matrix) using std::vector or raw arrays.
-Track dimensions for matrices (rows and columns).
-Methods:
-Matrix Operations:
-Transpose.
-Addition, multiplication.
-Check if square or identity matrix.
-Utility Functions:
-Print the matrix.
-Resize the array/matrix.
-
-
-
-
-
-class vector{
-
-};
+    return newMatrix;
+}
 
 
 
@@ -230,46 +260,34 @@ void arrayMenu(){
         switch (choice)
         {
         case 1:
-            std::cout<< "Please enter the value you would like to add\n";
-            std::cin >> value
-            insertAtBeginning(value);
+            displayArray();
             break;
         case 2:
-            std::cout<< "Please enter the value you would like to add\n";
-            std::cin >> value
-            insertAtEnd(value);
+            addDel(Array& array)
             break;
         case 3:
-            displayNodes(list.head);
+            changeElements(Array& array)
             break;
         case 4:
             std::cout<<"you have chosen to make a 2d matrix! Please list your row and columns list\n";
             matrix2DInitiation(array1,array2)
             break;
         case 5:
-            std::cout<< "Please enter the value you would like to delete\n";
-            std::cin >> value
-            deleteNodeByValue(value);
+            matrixDisplay(T** matrixRow,int row,int column)
             break;
         case 6:
-            std::cout<< "Please enter the value you would like to search\n";
-            std::cin >> value
-            search4Value(value);
+            matrixChangeElements(T** matrix,int currentRow,int currentColumn)
             break;
         case 7:
-            getLength();
+            transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColumn)
             break;
         case 8:
-            std::cout<< "Please enter the value you would like to find from nth Node\n";
-            std::cin >> nth
-            getNthNode(nth);
-            break;
-        case 9:
             mainMenu();
             break;
         
         default:
-            std::cout<<"The number chosen was not one of the choices please try again! \n";
+            std::cout<<"The number chosen was not one of the choices we will redirect you to the main menu. \n";
+            mainMenu();
             break;
         }
     
