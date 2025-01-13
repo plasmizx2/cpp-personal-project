@@ -205,13 +205,13 @@
     T** Array<T,length>::matrix2DInitiation(Array& array1,Array& array2){
         std::cout<<"Now that youve given me your row and columns\n";
         // need to allocate new memory for the array that will hold pointers
-    T** matrixRow = new T*[array1.currentSize]; // T** (double pointer of said dataType) the row(matrixRow) (T*) the new memory is made to to make an array of T data type of the size of the array1.currentSize
-    for(int i = 0;i <array1.currentSize;i++){
-        matrixRow[i] = new T[array2.currentSize]; //now access each element/pointer inside of the array of pointers 
-        // My def is its an array (double pointer) with each element inside of it pointing to another array thus creating the matrix
-    }
-        std::cout<< "Matrix has been made here it is!\n";
-        return matrixRow;
+        T** matrixRow = new T*[array1.currentSize]; // T** (double pointer of said dataType) the row(matrixRow) (T*) the new memory is made to to make an array of T data type of the size of the array1.currentSize
+        for(int i = 0;i <array1.currentSize;i++){
+            matrixRow[i] = new T[array2.currentSize]; //now access each element/pointer inside of the array of pointers 
+            // My def is its an array (double pointer) with each element inside of it pointing to another array thus creating the matrix
+        }
+            std::cout<< "Matrix has been made here it is!\n";
+            return matrixR;
     }
 
     template<typename T, int length>
@@ -354,10 +354,26 @@
 }
 
 
+int matrixChoice(){
+        std::cout << "\nDo you want to make a matrix?\n";
+        std::cout << "|============================|\n";
+        std::cout << "|0. Yes                      |\n";
+        std::cout << "|1. No                       |\n";
+        std::cout << "|2. Maybe Later              |\n";
+        std::cout << "|============================|\n";
+        std::cout << "\n";
+        std::cout << "Enter your choice: \n";
+        int matrixChoice;
+        std::cin >> matrixChoice;
+        return matrixChoice;
+    }
 
 
 template <typename T, int length>
-void arrayMenuOperations(Array<T, length>& array) {
+void arrayMenuOperations(Array<T, length>& array1,Array<T, length>& array2) {
+    T** initializedMatrix = nullptr;  // Pointer to store the 2D matrix
+    int matrixRows = 0;               // Store the number of rows
+    int matrixCols = 0;
     while (true) {
         std::cout << "\n----- Array Operations Menu -----\n";
         std::cout << "|============================|\n";
@@ -375,46 +391,126 @@ void arrayMenuOperations(Array<T, length>& array) {
         int choice;
         std::cin >> choice;
 
-        switch (choice) {
-            case 1: {
-                array.displayArray();
-                break;
+       int matrixChoice = matrixChoice();
+
+
+       if(matrixChoice == 0){
+            switch (choice) {
+                case 1: {
+                    array1.displayArray();
+                    break;
+                }
+                case 2: {
+                    array1.addDel(array1);
+                    break;
+                }
+                case 3: {
+                    array1.changeElements(array1);
+                    break;
+                }
+                default: {
+                    std::cout << "Invalid choice! Please try again.\n";
+                    break;
+                }
             }
-            case 2: {
-                array.addDel(array);
-                break;
+       }
+
+        if(matrixChoice == 1){
+            if(array2.getCurrentSize == 0){
+                std::cout<<"Your dont have a second array please make it now, the data type must be the same or there will be another error!";
+                int dataType = displayDataTypes();
+                switch (dataType){
+
+                case 0:
+                    std::cout << "You chose integers!\n";
+                    Array<int, 100> array2; // Create an integer array2
+                    array2.makeAnArray();     
+                    break;
+                case 1:
+                    std::cout << "You chose doubles!\n";
+                    Array<double, 100> array2; // Create a double array2
+                    array2.makeAnArray(); 
+                    break;
+                case 2:
+                    std::cout << "You chose floats!\n";
+                    Array<float, 100> array2; // Create a float array2
+                    array2.makeAnArray();
+                    break;
+                case 3:
+                    std::cout << "You chose strings!\n";
+                    Array<std::string, 100> array2; // Create a string array2
+                    array2.makeAnArray();      
+                    break;
+                case 4:
+                    std::cout << "You chose characters!\n";
+                    Array<char, 100> array2;
+                    array2.makeAnArray();      
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;                
+                default:
+                    break;
+                }
+
             }
-            case 3: {
-                array.changeElements(array);
-                break;
-            }
-            case 4: {
-                std::cout << "2D Matrix Initiation not implemented in this example.\n";
-                break;
-            }
-            case 5: {
-                std::cout << "Matrix Display not implemented in this example.\n";
-                break;
-            }
-            case 6: {
-                std::cout << "Matrix Change Elements not implemented in this example.\n";
-                break;
-            }
-            case 7: {
-                std::cout << "Transpose Current Matrix not implemented in this example.\n";
-                break;
-            }
-            case 8: {
-                std::cout << "Returning to Main Menu...\n";
-                return;
-            }
-            case 9: {
-                std::cout << "Exiting Program...\n";
-                exit(0);
-            }
-            default: {
-                std::cout << "Invalid choice! Please try again.\n";
-                break;
+            switch (choice) {
+                case 1: {
+                    array1.displayArray();
+                    if(array2.getCurrentSize != 0){
+                        array2.display();
+                    }
+                    break;
+                }
+                case 2: {
+                    array1.addDel(array1);
+                    if(array2.getCurrentSize != 0){
+                        array2.addDel(array2);
+                    }
+                    break;
+                }
+                case 3: {
+                    array1.changeElements(array1);
+                    if(array2.getCurrentSize != 0){
+                        array2.changeElements(array2);
+                    }
+                    break;
+                }
+                case 4: {
+                    std::cout << "To do the 2D Matrix Initiation you need 2 arrays make sure you have 2 before doing so.\n";
+                    initlizedMatrix = matrix2DInitiation(array1,array2);
+                    break;
+                }
+                case 5: {
+                    std::cout << "Matrix Display not implemented in this example.\n";
+                    matrixRows = array1.getCurrentSize();               // Store the number of rows
+                    matrixCols = array2.getCurrentSize();
+                    matrixDisplay(initializedMatrix,matrixRows,matrixCols)
+                    break;
+                }
+                case 6: {
+                    std::cout << "Matrix Change Elements not implemented in this example.\n";
+                    break;
+                }
+                case 7: {
+                    std::cout << "Transpose Current Matrix not implemented in this example.\n";
+                    break;
+                }
+                case 8: {
+                    std::cout << "Returning to Main Menu...\n";
+                    return;
+                }
+                case 9: {
+                    std::cout << "Exiting Program...\n";
+                    exit(0);
+                }
+                default: {
+                    std::cout << "Invalid choice! Please try again.\n";
+                    break;
+                }
             }
         }
     }
