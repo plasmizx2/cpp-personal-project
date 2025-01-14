@@ -369,9 +369,24 @@ int matrixChoice(){
     }
 
 
+int yesOrNo2ndMatrix(){
+    while(true){
+        std::cout<<"Would you like to do the same with the second matrix as well? (0 -> yes)(1 -> no)\n";
+        int choice;
+        std:: >> choice;
+        if(choice != 1|| choice != 0){
+            continue;
+        }
+        else{
+            return choice;
+        }
+    }
+}
+
+
 template <typename T, int length>
 void arrayMenuOperations(Array<T, length>& array1,Array<T, length>& array2) {
-    T** initializedMatrix = nullptr;  // Pointer to store the 2D matrix
+    T** initializedMatrix    = nullptr;  // Pointer to store the 2D matrix
     int matrixRows = 0;               // Store the number of rows
     int matrixCols = 0;
     while (true) {
@@ -416,7 +431,7 @@ void arrayMenuOperations(Array<T, length>& array1,Array<T, length>& array2) {
        }
 
         if(matrixChoice == 1){
-            if(array2.getCurrentSize == 0){
+            if(array2.getCurrentSize() == 0){
                 std::cout<<"Your dont have a second array please make it now, the data type must be the same or there will be another error!";
                 int dataType = displayDataTypes();
                 switch (dataType){
@@ -450,7 +465,6 @@ void arrayMenuOperations(Array<T, length>& array1,Array<T, length>& array2) {
 
                     break;
                 case 6:
-
                     break;                
                 default:
                     break;
@@ -460,52 +474,64 @@ void arrayMenuOperations(Array<T, length>& array1,Array<T, length>& array2) {
             switch (choice) {
                 case 1: {
                     array1.displayArray();
-                    if(array2.getCurrentSize != 0){
-                        array2.display();
+                    if(array2.getCurrentSize() != 0){
+                        choice = yesOrNo2ndMatrix();
+                        if(choice == 0){
+                            array2.display();
+                        }
                     }
                     break;
                 }
                 case 2: {
                     array1.addDel(array1);
-                    if(array2.getCurrentSize != 0){
-                        array2.addDel(array2);
+                    if(array2.getCurrentSize() != 0){
+                        choice = yesOrNo2ndMatrix();
+                        if(choice == 0){
+                            array2.addDel(array2);
+                        }
                     }
                     break;
                 }
                 case 3: {
                     array1.changeElements(array1);
-                    if(array2.getCurrentSize != 0){
-                        array2.changeElements(array2);
+                    if(array2.getCurrentSize() != 0){
+                        choice = yesOrNo2ndMatrix();
+                        if(choice == 0){
+                            array2.changeElements(array2);
+                        }
                     }
                     break;
                 }
                 case 4: {
                     std::cout << "To do the 2D Matrix Initiation you need 2 arrays make sure you have 2 before doing so.\n";
-                    initlizedMatrix = matrix2DInitiation(array1,array2);
+                    initializedMatrix = matrix2DInitiation(array1,array2);
                     break;
                 }
                 case 5: {
                     std::cout << "Matrix Display not implemented in this example.\n";
                     matrixRows = array1.getCurrentSize();               // Store the number of rows
                     matrixCols = array2.getCurrentSize();
-                    matrixDisplay(initializedMatrix,matrixRows,matrixCols)
+                    matrixDisplay(initializedMatrix,matrixRows,matrixCols);
                     break;
                 }
                 case 6: {
                     std::cout << "Matrix Change Elements not implemented in this example.\n";
+                    matrixChangeElements(initializedMatrix,matrixRows,matrixCols);
                     break;
                 }
                 case 7: {
                     std::cout << "Transpose Current Matrix not implemented in this example.\n";
+                    transposeCurrentMatrix(initializedMatrix,matrixRows,matrixCols);
                     break;
                 }
                 case 8: {
                     std::cout << "Returning to Main Menu...\n";
-                    return;
+                    main();
+                    break;
                 }
                 case 9: {
                     std::cout << "Exiting Program...\n";
-                    exit(0);
+                    exit();
                 }
                 default: {
                     std::cout << "Invalid choice! Please try again.\n";
