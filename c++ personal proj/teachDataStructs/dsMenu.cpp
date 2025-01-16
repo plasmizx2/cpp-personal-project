@@ -20,7 +20,7 @@ int main(){
         {
         case -1:
             std::cout<< "You are now being exited out of the program please wait!\n";
-            return -1
+            std::exit(0)
             break;
 
         case 0:
