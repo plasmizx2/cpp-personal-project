@@ -71,5 +71,35 @@
         "chrono": "cpp",
         "compare": "cpp",
         "concepts": "cpp"
-    }
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "server1",
+            "username": "root",
+            "database": "lenasLitos",
+            "askForPassword": true
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "server1",
+            "username": "root",
+            "database": "seanslearning",
+            "askForPassword": true
+        }
+    ]
 }
