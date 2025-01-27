@@ -2,7 +2,22 @@
     text-align: center;
 }
 
+#mePic{
+    text-align: center;
+    
+}
 
+
+#contactMeWord{
+    color: #ffffff;
+
+    
+}
+
+p{
+    text-align: center;
+    
+}
 
 body{
     background-color: rgba(255, 255, 255, 0.867);
@@ -13,9 +28,31 @@ body{
     
 }
 
-p{
+
+footer {
+    width: 100%;
+    background-color: gray;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0); 
     text-align: center;
+    max-width: ;
 }
+
+
+
+
+.contactMeLinks{
+    background-color: #ffffff;
+    border: 1px solid#000000;
+    margin:20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 .experiences{
     background-color: #ffffff;
@@ -44,12 +81,4 @@ p{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
 
 
-}
-
-footer{
-    color: rgb(0, 0, 0); /* White text */
-    text-align: center; /* Center-align the content */
-    padding: 20px; /* Space inside the footer */
-    bottom: 0;
-    width: 100%; /* Full width */
 }
