@@ -1,0 +1,22 @@
+Two Sum Problem - Hash Table Approach
+
+How It Works
+	•	Initialize a hash table (unordered_map<int, int> pairIdx)
+	•	Stores previously seen numbers as keys and their indices as values.
+	•	Loop through the nums vector
+	•	i represents the current index.
+	•	num is the current number at that index.
+	•	Check if target - num exists in the hash table
+	•	This means: “Have I already seen the number that pairs with num to reach target?”
+	•	If yes, return:
+	•	{i, pairIdx[target - num]}
+	•	i → the current index (the second number in the pair).
+	•	pairIdx[target - num] → the index of the first number, stored earlier.
+	•	Exit immediately since the solution is found.
+	•	If the pair isn’t found, store num in the hash table
+	•	pairIdx[num] = i
+	•	Key → num (current number).
+	•	Value → i (current index).
+	•	This ensures future numbers can check against it.
+	•	If no solution is found after the loop, return {}
+	•	This means no two numbers in nums add up to target.			
