@@ -75,7 +75,20 @@ bool HashTable::removeItem(int key,std::string value){
     std::cout << "Key not found!" << "\n";
     return false;  // Return false if the key-value pair was not found
 
+}
 
+std::string searchTable(int key){
+    int bucketHashValue = hashFunction(key);
+    std::list<std::pair<int,std::string>>& bucket =table[bucketHashValue];
+    
+    std::list<std::pair<int,std::string>>::iterator hashTableIterator;
+    for(hashTableIterator = bucket.begin();hashTableIterator != bucket.end();hashTableIterator++){
+        
+
+    }
+    
+}
+void printTable(){
 
 }
 
