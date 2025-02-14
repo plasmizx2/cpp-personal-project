@@ -14,7 +14,7 @@ public:
     int hashFunction(int key);
     bool insertItem(int key, std::string value);
     bool removeItem(int key,std::string value);
-    std::string searchTable(int key);
+    std::string searchTable(int key,std::string);
     void printTable();
 };
 
@@ -77,16 +77,20 @@ bool HashTable::removeItem(int key,std::string value){
 
 }
 
-std::string searchTable(int key){
+std::list<std::pair<int, std::string>>::iterator searchTable(int key,std::string value){
     int bucketHashValue = hashFunction(key);
     std::list<std::pair<int,std::string>>& bucket =table[bucketHashValue];
-    
     std::list<std::pair<int,std::string>>::iterator hashTableIterator;
     for(hashTableIterator = bucket.begin();hashTableIterator != bucket.end();hashTableIterator++){
-        
+        if(hashTableIterator -> first == key && hashTableIterator -> second == value){
+            std::cout << "The Key value pair you are looking for is" << hashTableIterator << "\n";
+            return hashTableIterator;
 
+            }
     }
-    
+
+    std::cout<<"Your search could not be completed, the key value pair was not found."<< "\n":
+    return;
 }
 void printTable(){
 
