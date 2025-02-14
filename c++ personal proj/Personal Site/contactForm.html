@@ -1,74 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>DumontDev</title>
-        <link rel="styleSheet" href="style.css">
-    </head>
+  <head>
+    <title>DumontDev</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="currentProjects.html">Current Projects</a>
+      <a href="finishedProjects.html">Finished Projects</a>
+      <a href="contactForm.html">Contact</a>
+    </nav>
 
-    <body>
+    <!-- Main Contact Section -->
+    <main class="contactFormSection">
+      <h1>Contact Me</h1>
 
+      <!-- "Professional" Contact Form -->
+      <form action="sendMail.php" method="POST" class="professionalContactForm">
         
-        <footer>
+        <!-- Carded row for Name & Email -->
+        <div class="cardedFormRow">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              placeholder="Your Name" 
+              required
+            >
+          </div>
+      
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Your Email" 
+              required
+            >
+          </div>
+        </div>
 
-            <div class="contactMeBackground">    
-            <h2>Contact me</h2>
-            </div>
+        <!-- Full-width row for the Subject -->
+        <div class="form-row">
+          <div class="form-field-full">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Your Subject..."
+              required
+            >
+          </div>
+        </div>
 
+        <!-- Full-width row for the Message -->
+        <div class="form-row">
+          <div class="form-field-full">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5"
+              placeholder="Your Message..." 
+              required
+            ></textarea>
+          </div>
+        </div>
 
-            <div class="contactMeLinks">
-            <h4>
-                Phone: 401-572-2750
-            </h4>
-            </div>
+        <!-- Submit button row -->
+        <div class="form-row submit-row">
+          <button type="submit">Send</button>
+        </div>
+      </form>
 
-            <div class="contactMeLinks">
-            <h4>
-                Personal Email: 
-                <a href="Seandumont2005@gmail.com">Seandumont2005@gmail.com</a>
-                <img src = "https://logos-world.net/wp-content/uploads/2020/11/Gmail-Logo-2013-2020.png" width="75" height="50">
-            </h4>
-            </div>
+      <!-- Other Contact Details -->
+      <div class="otherContactDetails">
+        <h3>Other Ways to Reach Me</h3>
+        <ul>
+          <li><strong>Phone:</strong> 401-572-2750</li>
+          <li>
+            <strong>Personal Email:</strong>
+            <a href="mailto:Seandumont2005@gmail.com">Seandumont2005@gmail.com</a>
+          </li>
+          <li>
+            <strong>School Email:</strong>
+            <a href="mailto:Sean.dumont@uri.edu">Sean.dumont@uri.edu</a>
+          </li>
+          <li>
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/sean-dumont-s26m05/" target="_blank">
+              Visit my LinkedIn profile
+            </a>
+          </li>
+          <li>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/plasmizx2?tab=repositories" target="_blank">
+              Check out my GitHub repositories
+            </a>
+          </li>
+        </ul>
+      </div>
 
-            <div class="contactMeLinks">
-            <h4>
-                School Email:
-                <a href="Sean.dumont@uri.edu">Sean.dumont@uri.edu</a>
-                <img src="https://th.bing.com/th/id/OIP.97QhZ0HOx66UDxl8zhNTxwHaJC?rs=1&pid=ImgDetMain" width="50" height="50"> 
-            </h4>
-            </div>
-
-            <div class="contactMeLinks">
-            <h4>
-                LinkedIn:
-                <a href="https://www.linkedin.com/in/sean-dumont-s26m05/">Visit my LinkedIn profile</a> 
-                <img src="https://logosmarken.com/wp-content/uploads/2020/04/Linkedin-Emblem.png" width="100" height="50">
-            </h4>
-            </div>
-
-            <div class="contactMeLinks">
-            <h4>
-                GitHub: 
-                <a href="https://github.com/plasmizx2?tab=repositories">Check out my GitHub repositories</a>
-                <img src="https://pngimg.com/uploads/github/github_PNG68.png" width="50" height="50">
-            </h4>
-            </div>
-
-
-            <div class="contactMeBackground">
-            <h5>
-                Subscribe to my site to get updates on my progress!
-            </h5>
-        
-            <p>
-                Email: <input type="email">
-            </p>
-            <p>
-                <button>Submit</button>
-            </p>
-            </div>  
-            
-
-        </footer>
-    </body>
+      <!-- Optional Subscribe Section -->
+      <div class="subscribeSection">
+        <h3>Subscribe for Updates</h3>
+        <p>Stay updated on my latest projects and progress by subscribing below!</p>
+        <form action="#" method="POST" class="subscribeForm">
+          <input 
+            type="email" 
+            name="subscriberEmail" 
+            placeholder="Your email address" 
+            required
+          >
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </main>
+  </body>
 </html>

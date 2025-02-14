@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thank You</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="currentProjects.html">Current Projects</a>
+      <a href="finishedProjects.html">Finished Projects</a>
+      <a href="contactForm.html">Contact</a>
+    </nav>
+
+    <main class="thankYouContainer">
+      <h1>Thank You for Your Message!</h1>
+      <p>We appreciate you taking the time to reach out. We'll be in touch soon.</p>
+
+      <button class="goHomeBtn" onclick="confirmGoHome()">
+        Return Home
+      </button>
+    </main>
+
+    <script>
+      function confirmGoHome() {
+        if (confirm("Would you like to return to the homepage now?")) {
+          window.location.href = "index.html";
+        }
+      }
+    </script>
+  </body>
+</html>

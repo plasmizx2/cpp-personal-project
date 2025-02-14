@@ -4,59 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Projects</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensures styling is applied -->
 </head>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="currentProjects.html">Current Projects</a>
+    <a href="finishedProjects.html">Finished Projects</a>
+    <a href="contactForm.html">Contact</a>
+</nav>
+<body>
+
     <header>
-        <h1>Mr.Dumonts current projects</h1>
+        <h1>My Current Projects</h1>
     </header>
 
-    <h4>Data Structures Learning Menu</h4>
-        <ul>
-            <li>Interactive menu-driven application that allows users to explore various data structures such as arrays, linked lists, stacks, queues, and more.</li>
-            <li>Each menu option includes functionality to perform essential operations like insertion, deletion, searching, and traversal.</li>
-            <li>Designed to deepen understanding of how data structures are implemented and used in real-world scenarios.</li>
-            <li>Learning Focus: Memory management in C++, Efficient algorithms for data manipulation, Writing modular and reusable code.</li>
-        </ul>
+    <div class="project-container">
+        <div class="project-card" onclick="openModal('project1')">
+            <h3>Shopease</h3>
+            <p>Product search across various websites with price comparison.</p>
+        </div>
 
+        <div class="project-card" onclick="openModal('project2')">
+            <h3>Learning Unreal Engine</h3>
+            <p>Developing a 3D environment with interactive elements.</p>
+        </div>
 
-    <h4>Learning Unreal Engine</h4>
-    <ul>
-        <li>Familiarizing with the Unreal Engine interface, blueprints, and scripting.</li>
-        <li>Developing a basic 3D environment with simple physics-based interactions.</li>
-        <li>Experimenting with lighting, materials, and textures for realistic visuals.</li>
-        <li>Learning Focus: Understanding the basics of game physics and rendering pipelines, creating engaging gameplay experiences using C++ and Unreal Engine's APIs.</li>
-    </ul>
-    </div>    
+        <div class="project-card" onclick="openModal('project3')">
+            <h3>Experiment Tools for Machine Learning Bias Analysis</h3>
+            <p>Researching AI bias and documenting experiment tools.</p>
+        </div>
 
+        <div class="project-card" onclick="openModal('project4')">
+            <h3>AI-Powered Facial Recognition System</h3>
+            <p>Developing a face recognition system using OpenCV.</p>
+        </div>
 
-    <h4>Shopease</h4>
+        <div class="project-card" onclick="openModal('project5')">
+            <h3>Facial Recognition Application Using MediaPipe</h3>
+            <p>Matching user faces to celebrity look-alikes.</p>
+        </div>
+
+        <div class="project-card" onclick="openModal('project6')">
+            <h3>Data Structures Learning Menu</h3>
+            <p>Interactive app for learning and implementing data structures.</p>
+        </div>
+    </div>
+
+    <!-- Popup Modals for Project Details -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project1')">&times;</span>
+            <h2>Shopease</h2>
             <ul>
                 <li>Product search across various websites.</li>
-                <li>Price comparison and coupon aggregation for the best deals.</li>
-                <li>Auto-buy and recurring purchase options with user confirmation.</li>
-                <li>Backend development using MySQL for data management.</li>
+                <li>Price comparison and coupon aggregation.</li>
+                <li>Auto-buy and recurring purchase options.</li>
+                <li>Backend development using MySQL.</li>
                 <li>Connecting frontend and backend with Python and C++.</li>
             </ul>
+        </div>
+    </div>
 
-    <h4>Experiment Tools for Machine Learning Bias Analysis, University of Rhode Island - ML4STS Lab (Mentored by Sarah Brown)</h4>
-    <ul>
-        <li>Documenting experiment tools to analyze machine learning bias and ensure accessibility for researchers</li>
-        <li>Conducting research on AI bias, socio-technical impacts, and algorithmic accountability</li>
-        <li>Collaborating with researchers to analyze findings and summarize key insights on algorithmic fairness</li>
-    </ul>   
-    
-    
-    <h4>AI - Powered Facial Recognition System (Current)</h4>
-    <ul>
-        <li>Developed a facial recognition system using OpenCV and Python to identify and track users</li>
-        <li>Implemented feature extraction and classification techniques for accurate recognition</li>
-        <li>Explored real-time image processing and security applications</li>
-    </ul>
-    
-    <h4>Facial Recognition Application Using MediaPipe</h4>
-    <ul>
-        <li>Developed an application that identifies the closest celebrity match using MediaPipe for facial detection and an API with a celebrity database.</li>
-        <li>Implemented facial feature extraction and comparison techniques to enhance accuracy.</li>
-        <li>Integrated API calls to retrieve and match celebrity images dynamically.</li>
-        <li>Optimized real-time performance for seamless user experience.</li>
-    </ul>
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project2')">&times;</span>
+            <h2>Learning Unreal Engine</h2>
+            <ul>
+                <li>Familiarizing with the Unreal Engine interface, blueprints, and scripting.</li>
+                <li>Developing a basic 3D environment with simple physics-based interactions.</li>
+                <li>Experimenting with lighting, materials, and textures for realistic visuals.</li>
+                <li>Understanding game physics and rendering pipelines.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project3')">&times;</span>
+            <h2>Experiment Tools for Machine Learning Bias Analysis</h2>
+            <ul>
+                <li>Documenting experiment tools to analyze machine learning bias.</li>
+                <li>Conducting research on AI bias, socio-technical impacts, and algorithmic accountability.</li>
+                <li>Collaborating with researchers to analyze findings and summarize key insights.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project4" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project4')">&times;</span>
+            <h2>AI-Powered Facial Recognition System</h2>
+            <ul>
+                <li>Developing a facial recognition system using OpenCV and Python.</li>
+                <li>Implementing feature extraction and classification techniques.</li>
+                <li>Exploring real-time image processing and security applications.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project5" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project5')">&times;</span>
+            <h2>Facial Recognition Application Using MediaPipe</h2>
+            <ul>
+                <li>Developed an application that identifies the closest celebrity match.</li>
+                <li>Implemented facial feature extraction and comparison techniques.</li>
+                <li>Integrated API calls to retrieve and match celebrity images dynamically.</li>
+                <li>Optimized real-time performance for seamless user experience.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project6" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('project6')">&times;</span>
+            <h2>Data Structures Learning Menu</h2>
+            <ul>
+                <li>Interactive menu-driven application for learning data structures.</li>
+                <li>Features arrays, linked lists, stacks, queues, and more.</li>
+                <li>Includes essential operations like insertion, deletion, searching, and traversal.</li>
+                <li>Focuses on memory management in C++, efficient algorithms, and modular code.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modals -->
+    <script>
+        function openModal(projectId) {
+            document.getElementById(projectId).style.display = "flex";
+        }
+
+        function closeModal(projectId) {
+            document.getElementById(projectId).style.display = "none";
+        }
+    </script>
+
+</body>
 </html>

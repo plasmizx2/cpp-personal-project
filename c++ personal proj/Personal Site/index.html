@@ -2,97 +2,137 @@
 <html>
     <head>
         <title>DumontDev</title>
-        <link rel="styleSheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="currentProjects.html">Current Projects</a>
+        <a href="finishedProjects.html">Finished Projects</a>
+        <a href="contactForm.html">Contact</a>
+    </nav>
+    
     <body>
         <div id="mePic">
-        <img 
-            src="https://media.licdn.com/dms/image/v2/D4E03AQHBh9u1x6dUkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727964425490?e=1742428800&v=beta&t=M-GvwgMxHEDdO-teL-KbX8UkOzZan_0__I9mC0WOfCI"
-            alt="Picture of Sean Dumont"
-            width = 250 
-            height = 250 
-        >
+            <img 
+                src="https://media.licdn.com/dms/image/v2/D4E03AQHBh9u1x6dUkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727964425490?e=1742428800&v=beta&t=M-GvwgMxHEDdO-teL-KbX8UkOzZan_0__I9mC0WOfCI"
+                alt="Picture of Sean Dumont"
+                width="250" 
+                height="250"
+            >
         </div>
-
 
         <div id="WelcomeSign">
-        <h1>I'm Sean Dumont</h1>
+            <h1>I'm Sean Dumont</h1>
         </div>
-
 
         <div class="indentingBodyWords">
-        <h2>Technical Skills: </h2>
+            <h2>Technical Skills: </h2>
         </div>
 
-        <ul>
-            <li>C++</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>GitHub</li>
-            <li>Vscode</li>
-            <li>HTML</li>
-            <li>Jupyter Notebook</li>
-            <li>IntelliJ</li>
-            <li>Zoom</li>
-            <li>Windows</li>
-            <li>Mac</li>
-            <li>Outlook</li>
-            <li>Microsoft Excel</li>
-            <li>Microsoft Word</li>
-            <li>Microsoft Teams</li>
-            <li>Command-Line Interaction</li>
-            <li>Data Parsing and Cleaning</li>
-
-
-        </ul>
-        <p>
-            C++, JavaScript, Python, GitHub, Vscode, HTML, Jupyter Notebook, IntelliJ,  Zoom, Windows, Mac, Outlook,
-            Microsoft Excel, Microsoft Word, Microsoft Teams, Command-Line Interaction, Data Parsing and Cleaning
-        </p>
-
-        <div class="indentingBodyWords">
-        <h2>Pending Technical Skills:</h2>
+        <div class="skills-container">
+            <div class="skill-box">C++
+                <span class="tooltip">Used for data structures, algorithms, and backend development.</span>
+            </div>
+            <div class="skill-box">JavaScript
+                <span class="tooltip">Used for interactive web development and dynamic UI.</span>
+            </div>
+            <div class="skill-box">Python
+                <span class="tooltip">Applied in machine learning, automation, and scripting.</span>
+            </div>
+            <div class="skill-box">GitHub
+                <span class="tooltip">Version control and collaborative coding with repositories.</span>
+            </div>
+            <div class="skill-box">VS Code
+                <span class="tooltip">Main IDE for coding with extensions for various languages.</span>
+            </div>
+            <div class="skill-box">HTML
+                <span class="tooltip">Core language for structuring web pages.</span>
+            </div>
+            <div class="skill-box">Jupyter Notebook
+                <span class="tooltip">Used for data analysis, visualization, and machine learning projects.</span>
+            </div>
+            <div class="skill-box">IntelliJ
+                <span class="tooltip">Main IDE for Java development and backend work.</span>
+            </div>
+            <div class="skill-box">Zoom
+                <span class="tooltip">Utilized for virtual meetings, presentations, and webinars.</span>
+            </div>
+            <div class="skill-box">Windows
+                <span class="tooltip">Primary OS for development, debugging, and testing.</span>
+            </div>
+            <div class="skill-box">Mac
+                <span class="tooltip">Used for software development and Unix-based scripting.</span>
+            </div>
+            <div class="skill-box">Outlook
+                <span class="tooltip">Managing professional email communications.</span>
+            </div>
+            <div class="skill-box">Microsoft Excel
+                <span class="tooltip">Data organization, spreadsheet automation, and analytics.</span>
+            </div>
+            <div class="skill-box">Microsoft Word
+                <span class="tooltip">Used for documentation and report writing.</span>
+            </div>
+            <div class="skill-box">Microsoft Teams
+                <span class="tooltip">Collaboration, communication, and project management.</span>
+            </div>
+            <div class="skill-box">Command-Line Interaction
+                <span class="tooltip">Running scripts, managing files, and executing programs.</span>
+            </div>
+            <div class="skill-box">Data Parsing and Cleaning
+                <span class="tooltip">Processing and structuring raw data efficiently.</span>
+            </div>
         </div>
-
-        <p>
-            Backend Development, Data Structures and Algorithms, Full-Stack Web Development, Game Development, Machine Learning, Certifications
-        </p>
-
-        <div class="indentingBodyWords">
-        <h2>Education</h2>
-        </div>
-        <p>
-            University Of Rhode Island (August 2023 - Present) - Bachelor of Science in Computer Science
-        </p>
-
-        <div class="indentingBodyWords">
-        <h2>Professional Experience</h2>
-        </div>
-
-        <div class="experiences">
-        <h4>IT intern | Rhode Island Department of Transportation | Providence RI | May 2024 - November 2024</h4>
-        <ul>
-            <li>Strengthened Python data analysis skills through hands-on projects</li>
-            <li>Provided help desk support, troubleshoot  technical issues, and resolved IT-related concerns for department staff</li>
-            <li>Collaborated with project managers and the IT department to improve processes and workflow efficiency</li>
-            <li>Assisted with office operations, including filing, document management, and general administrative support</li>
         
-        </ul>
+        <!-- New wrapper from here down -->
+        <div class="pendingSkillsSection">
+
+            <div class="indentingBodyWords">
+                <h2>Pending Technical Skills:</h2>
+            </div>
+
+            <!-- Turned your comma-separated list into bullets for clarity -->
+            <ul class="pendingSkillsList">
+                <li>Backend Development</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Full-Stack Web Development</li>
+                <li>Game Development</li>
+                <li>Machine Learning</li>
+                <li>Certifications</li>
+            </ul>
+
+            <div class="indentingBodyWords">
+                <h2>Education</h2>
+            </div>
+            <p class="pendingSectionText">
+                University Of Rhode Island (August 2023 - Present) - Bachelor of Science in Computer Science
+            </p>
+
+            <div class="indentingBodyWords">
+                <h2>Professional Experience</h2>
+            </div>
+
+            <div class="experiences">
+                <h4>IT intern | Rhode Island Department of Transportation | Providence RI | May 2024 - November 2024</h4>
+                <ul>
+                    <li>Strengthened Python data analysis skills through hands-on projects</li>
+                    <li>Provided help desk support, troubleshot technical issues, and resolved IT-related concerns</li>
+                    <li>Collaborated with project managers and the IT department to improve processes and workflow efficiency</li>
+                    <li>Assisted with office operations, including filing, document management, and general administrative support</li>
+                </ul>
+            </div>
+
+            <div class="experiences">
+                <h4>General Laborer | DCCM, LLC | Providence RI | February 2021 - Present</h4>
+                <ul>
+                    <li>Cleaned and prepped construction sites by removing debris, trash, and hazardous materials</li>
+                    <li>Operated machinery and various construction equipment</li>
+                    <li>Transported materials, loaded and unloaded supplies around the site</li>
+                    <li>Assisted tradespeople with plumbing, electrical, roofing, and more</li>
+                </ul>
+            </div>
         </div>
+        <!-- End of new wrapper -->
 
-        <div class="experiences">
-        <h4>General Laborer | DCCM,LLC | Providence Rhode Island|February 2021 - Present</h4>
-        <ul>
-            <li>Cleaned and prepped over the site for construction by removing debris, trash, and hazardous materials</li>
-            <li>Operated machinery: used construction equipment and machinery</li>
-            <li>Transported materials: loaded and unloaded materials, and transporting materials around the site</li>
-            <li>Assisting tradespeople: help with plumbing, electrical, roofing, and other trade work</li>
-        </ul>
-        </div>
-
-
-        
     </body>
 </html>

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <unordered_map>
+
 
 class HashTable {
 private:
@@ -28,9 +30,11 @@ bool HashTable::isEmpty() const {
     return false;
 }
 
+
 int HashTable::hashFunction(int key) {
     return key % hashGroups; // Key: 905, in return, this function will spit out 5.
 }
+
 
 void HashTable::insertItem(int key, std::string value) {
     int hashValue = hashFunction(key);// Find hash value of whatever ur key is so it can later be found inside the hash table
