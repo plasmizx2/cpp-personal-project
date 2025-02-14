@@ -92,7 +92,22 @@ std::list<std::pair<int, std::string>>::iterator searchTable(int key,std::string
     std::cout<<"Your search could not be completed, the key value pair was not found."<< "\n":
     return;
 }
-void printTable(){
 
+void printTable() {
+    for (int i = 0; i < table.size(); i++) {
+        if (table.empty()) {  
+            std::cout << "The table is empty\n";
+            return;
+        } 
+        else {
+            std::cout << "Here is your table at position " << i << ": ";
+
+            std::list<std::pair<int, std::string>>::iterator hashTableIterator;
+            for (hashTableIterator = table[i].begin(); hashTableIterator != table[i].end(); ++hashTableIterator) {
+                std::cout << "(" << hashTableIterator->first << ", " << hashTableIterator->second << ") ";
+            }
+            std::cout << "\n";  
+        }
+    }
+    return;
 }
-
