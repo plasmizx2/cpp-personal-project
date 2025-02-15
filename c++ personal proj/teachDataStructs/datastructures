@@ -15,6 +15,16 @@ Singly Linked List
 Doubly Linked List
 Circular Linked List
 
+3. Hash-Based Data Structures
+Efficient for searching, insertion, and deletion.
+
+Hash Table
+    Stores key-value pairs.
+    Handles collisions using techniques like chaining or open addressing.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Hash Map
+    Advanced version of a hash table, used in languages like Java.
+
 
 Stack
 Last In, First Out (LIFO) structure.
@@ -52,14 +62,7 @@ Types:
     Cyclic and Acyclic Graphs
 
 
-3. Hash-Based Data Structures
-Efficient for searching, insertion, and deletion.
 
-Hash Table
-    Stores key-value pairs.
-    Handles collisions using techniques like chaining or open addressing.
-Hash Map
-    Advanced version of a hash table, used in languages like Java.
 
 4. Advanced and Specialized Data Structures
 Designed for specific use cases.
