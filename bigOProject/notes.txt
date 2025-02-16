@@ -1,0 +1,43 @@
+Modular Design:
+MediaPipe’s new Tasks API is built to be modular and consistent across different types of tasks (vision, audio, etc.). 
+This means that instead of having one monolithic API, they separate out configuration, model loading, and processing into different components.
+The vision module is just a namespace for all vision-related tasks (like face detection). 
+When you see from mediapipe.tasks.python import vision, it means “import the vision tasks (e.g., face detection, object detection) so we can use them.”
+
+
+Configuration Objects (BaseOptions & FaceDetectorOptions):
+BaseOptions: This object holds basic configuration details that many tasks need, like where to find the model file. 
+Think of it as setting the foundation—telling the system, “Hey, load this model from here.”
+it also takes in a (model_asset_path=) paramter which is a string giving the path
+
+
+FaceDetectorOptions: This is a more specific configuration for the face detector. 
+It builds on BaseOptions and can include additional settings (like running mode). 
+By creating a separate options object, MediaPipe lets you tweak the detector’s behavior without changing the code that actually runs detection.
+
+
+In simple terms, when you write running_mode=vision.RunningMode.IMAGE, 
+you’re telling the system to use the “IMAGE” mode instead of the default. 
+If you don’t provide a value, the FaceDetectorOptions uses its 
+built-in defaults—by default it processes images (running_mode is IMAGE) and 
+uses standard settings that work for most cases, so you only need to override these 
+if you have a special requirement (like video or live stream processing).
+
+
+If you don’t provide any parameters, the default running mode is set to IMAGE. 
+However, you must supply a BaseOptions object (with a valid model path or buffer) because without it, the model won’t be loaded.
+
+
+Factory Method (create_from_options):
+Instead of directly constructing a FaceDetector with a long list of parameters, MediaPipe uses a factory method—create_from_options(options). 
+This method takes your configuration (the options objects) and creates an instance of the FaceDetector that’s fully set up.
+This approach makes it easier to manage, extend, or modify the configuration without changing the detector’s internal code. 
+It also hides some of the complexity behind the scenes, so you don’t need to worry about low-level details.
+
+
+Behind the Scenes:
+Underneath this Python API, MediaPipe is likely interacting with highly optimized C++ code that actually performs the face detection. 
+The options you set in Python are passed down to this lower-level code.
+The modular design means that if you later decide to use a different model 
+or change a parameter (like the running mode from IMAGE to VIDEO), you just adjust the options and the rest of your code remains the same.
+

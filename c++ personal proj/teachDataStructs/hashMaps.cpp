@@ -14,7 +14,7 @@ public:
     int hashFunction(int key);
     bool insertItem(int key, std::string value);
     bool removeItem(int key,std::string value);
-    std::list<std::pair<int, std::string>>::iterator searchTable(int key,std::string);
+    std::string searchTable(int key);
     void printTable();
 };
 
@@ -59,60 +59,30 @@ bool HashTable::insertItem(int key, std::string value) {
     return true;  // A new key-value pair was added
 }
 
-bool HashTable::removeItem(int key, std::string value) {
+bool HashTable::removeItem(int key,std::string value){
     int bucketHashValue = hashFunction(key);
-    std::list<std::pair<int, std::string>>& bucket = table[bucketHashValue];
+    std::list<std::pair<int,std::string>>& bucket = table[bucketHashValue];
 
-    // Declare an iterator for the list
-    std::list<std::pair<int, std::string>>::iterator hashTableIterator = bucket.begin();
-
-    // Iterate through the bucket to find the key-value pair
-    while (hashTableIterator != bucket.end()) {
-        if (hashTableIterator->first == key && hashTableIterator->second == value) {
-            hashTableIterator = bucket.erase(hashTableIterator);  // Get next valid iterator
-            std::cout << "Deleted successfully\n";
-            return true;
-        } else {
-            hashTableIterator++;  // Move to the next element
-        }
-    }
-
-    std::cout << "Key not found!\n";
-    return false;  // Return false if the key-value pair was not found
-}
-
-
-std::list<std::pair<int, std::string>>::iterator HashTable::searchTable(int key,std::string value){
-    int bucketHashValue = hashFunction(key);
-    std::list<std::pair<int,std::string>>& bucket =table[bucketHashValue];
-    std::list<std::pair<int,std::string>>::iterator hashTableIterator;
+    //make itterator for forloop
+    std::list<std::pair<int, std::string>>::iterator hashTableIterator;
     for(hashTableIterator = bucket.begin();hashTableIterator != bucket.end();hashTableIterator++){
-        if(hashTableIterator -> first == key && hashTableIterator -> second == value){
-            std::cout << "The Key-Value pair you are looking for is: (" << hashTableIterator->first << ", " << hashTableIterator->second << ")\n";
-            return hashTableIterator;
-
-            }
-    }
-
-    std::cout<<"Your search could not be completed, the key value pair was not found."<< "\n";
-    return bucket.end();
-}
-
-void HashTable::printTable() {
-    for (int i = 0; i < hashGroups; i++) { // u use hashgroup instead of table because hashgroups is the actual size since its a static array.
-        if (table[i].empty()) {  
-            std::cout << "The table is empty\n";
-            return;
-        } 
-        else {
-            std::cout << "Here is your table at position " << i << ": ";
-
-            std::list<std::pair<int, std::string>>::iterator hashTableIterator;
-            for (hashTableIterator = table[i].begin(); hashTableIterator != table[i].end(); ++hashTableIterator) {
-                std::cout << "(" << hashTableIterator->first << ", " << hashTableIterator->second << ") ";
-            }
-            std::cout << "\n";  
+        if(hashTableIterator->first == key && hashTableIterator->second == value){
+            bucket.erase(hashTableIterator);
+            std::cout<<" deleted succesfully" << "\n";
+            return true;
         }
     }
-    return;
+    std::cout << "Key not found!" << "\n";
+    return false;  // Return false if the key-value pair was not found
+
+
+
+}
+
+std::string HashTable::searchTable(int key){
+
+}
+
+void HashTable::printTable(){
+    
 }
