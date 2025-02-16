@@ -1,0 +1,5 @@
+First u gotta find a api with celebrity images
+Then u need to find a face recognition algorithm there’s ton already built
+Or if you feeling like a genius build one yourself
+From there you need to work your logic on how your displaying similarities there’s a lot of different ways but choose whatever you feel is the closest
+And then basically u write a function that goes through the api and finds a face closest basically if it finds a face closer that face becomes closest ect

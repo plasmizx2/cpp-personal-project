@@ -1,0 +1,20 @@
+	1.	running_mode (How the program works)
+	•	You can choose how the face detection runs:
+	•	IMAGE: Detects faces in a single picture.
+	•	VIDEO: Detects faces in a video, frame by frame.
+	•	LIVE_STREAM: Detects faces in a live camera feed. If you use this, you need to set up a function to handle results as they come in.
+	•	The default setting is IMAGE.
+
+	2.	min_detection_confidence (How sure it needs to be)
+	•	This number decides how confident the program must be before saying it found a face.
+	•	Range: 0 (not confident) to 1 (very confident).
+	•	Default: 0.5 (meaning it has to be at least 50% sure before it considers a face detected).
+
+	3.	min_suppression_threshold (How to avoid duplicate face detections)
+	•	Sometimes, the program detects the same face multiple times. This setting helps it merge overlapping detections.
+	•	Range: 0 to 1 (higher values mean it will be stricter about overlapping detections).
+	•	Default: 0.3 (meaning it will consider two detections to be the same face if they overlap by at least 30%).
+
+	4.	result_callback (What to do with results in live mode)
+	•	If you’re using live streaming mode, you need to provide a function to handle results as they come in (like displaying them on screen or saving them).
+	•	This is only needed for live streaming and doesn’t have a default setting.

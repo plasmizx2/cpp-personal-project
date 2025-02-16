@@ -1,0 +1,20 @@
+Settings You Can Change
+	1.	Mode (running_mode):
+	•	"IMAGE" → For processing single images.
+	•	"VIDEO" → For analyzing video frames.
+	•	"LIVE_STREAM" → For real-time webcam detection. (If using this, you need to set up a listener to get results.)
+	2.	Max Faces (num_faces):
+	•	The number of faces the system will detect at once. (Default: 1)
+	3.	Detection Confidence (min_face_detection_confidence):
+	•	How sure the AI needs to be before saying, “Yes, this is a face.” (Default: 50% certainty, can be increased for accuracy.)
+	4.	Face Presence Confidence (min_face_presence_confidence):
+	•	How confident the AI is that a face actually exists in the image. (Default: 50% certainty.)
+	5.	Tracking Confidence (min_tracking_confidence):
+	•	Helps the AI keep track of faces when they move. (Default: 50% certainty.)
+	6.	Extra Features (Optional)
+	•	output_face_blendshapes: (Default: False)
+	•	If True, it provides more details about facial expressions.
+	•	output_facial_transformation_matrices: (Default: False)
+	•	If True, it gives a transformation matrix for face effects.
+	7.	Result Listener (result_callback):
+	•	Only needed for live streaming mode. It helps process results in real time.
