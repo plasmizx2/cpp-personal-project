@@ -41,3 +41,29 @@ The options you set in Python are passed down to this lower-level code.
 The modular design means that if you later decide to use a different model 
 or change a parameter (like the running mode from IMAGE to VIDEO), you just adjust the options and the rest of your code remains the same.
 
+Collection of detected faces, where each face is represented as a detection proto message that contains a bounding box and 6 key points 
+(right eye, left eye, nose tip, mouth center, right ear tragion, and left ear tragion). 
+The bounding box is composed of xmin and width (both normalized to [0.0, 1.0] by the image width) and ymin and height 
+(both normalized to [0.0, 1.0] by the image height). Each key point is composed of x and y, which are normalized to [0.0, 1.0] 
+by the image width and height respectively.
+
+line 66 on the main page chat said to possibly use this
+image_width, image_height = capturedFrame.shape[1], capturedFrame.shape[0]
+x = int(bbox.origin_x * image_width)
+y = int(bbox.origin_y * image_height)
+w = int(bbox.width * image_width)
+h = int(bbox.height * image_height)
+
+
+
+
+The cv2.rectangle() function needs:
+	1.	The top-left corner of the rectangle (x, y).
+	2.	The bottom-right corner of the rectangle (x + w, y + h).
+
+💡 Why?
+	•	The AI model gives you the starting point (x, y), which is the top-left corner.
+	•	It also gives the width (w) and height (h) of the detected face.
+	•	To find the bottom-right corner, you add:
+	•	x + w → Moves right by w pixels.
+	•	y + h → Moves down by h pixels.
