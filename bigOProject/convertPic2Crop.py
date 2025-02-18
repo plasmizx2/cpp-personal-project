@@ -6,7 +6,7 @@ import os
 
 def regular2Crop():
     mpFaceDetection = mp.solutions.face_detection
-    faceDetector = mpFaceDetection.FaceDetection(min_detection_confidence=.7)
+    faceDetector = mpFaceDetection.FaceDetection(min_detection_confidence=.9)
 
     regEmployeePics = '/Users/seandumont/Desktop/cpp-personal-project/bigOProject/regularPics'
     croppedEmployeePics = '/Users/seandumont/Desktop/cpp-personal-project/bigOProject/croppedPics'
@@ -46,5 +46,4 @@ def regular2Crop():
                 croppedPath = os.path.join(croppedEmployeePics,fileName)
                 cv2.imwrite(croppedPath,croppedFace)
                 print(f"✅ Saved cropped face: {croppedPath}")
-if __name__ == "__main__":
-    regular2Crop()
+

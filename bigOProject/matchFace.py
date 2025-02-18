@@ -2,6 +2,7 @@ import face_recognition
 import os
 import csv
 from datetime import datetime
+import numpy as np
 
 def matchFace():
     print("🔍 Comparing captured face to employee database...")
@@ -29,17 +30,18 @@ def matchFace():
     newEncoding = face_recognition.face_encodings(newFace)
 
     if newEncoding:
-        matches = face_recognition.compare_faces(knownEncodings, newEncoding[0])
+        distances = face_recognition.face_distance(knownEncodings, newEncoding[0])
+        best_match_index = np.argmin(distances)  # Get index of the smallest distance
 
-        if True in matches:
-            matchIndex = matches.index(True)
-            matchedName = employee_names[matchIndex]
-            print(f"✅ Person Recognized: {matchedName}")
-            logAttendance(matchedName)  # ✅ Log attendance
+        threshold = 0.7 # Adjust if necessary (lower = more strict, higher = more lenient)
+
+        if distances[best_match_index] < threshold:
+            matchedName = employee_names[best_match_index]
+            print(f":white_check_mark: Closest Match: {matchedName} (Distance: {distances[best_match_index]:.3f})")
+            logAttendance(matchedName)  # :white_check_mark: Log attendance
         else:
-            matchedName = "Unknown"
-            print("❌ No match found.")
-            logAttendance(matchedName)  # ✅ Log "Unknown" check-in
+            print(":x: No match found within threshold.")
+            logAttendance("Unknown")  # :white_check_mark: Log "Unknown" check-in
     else:
         print("❌ No face detected in captured image.")
         exit()
@@ -52,5 +54,3 @@ def logAttendance(name):
         writer.writerow([timestamp, name])
     print(f"📜 Logged Attendance: {name} at {timestamp}")
 
-if __name__ == "__main__":
-    matchFace()

@@ -3,7 +3,6 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import numpy as np
-import requests
 #USED FOR CAPTURING THE PERSON CURRENT FACE SO THEY CAN COME BACK AND COMPARE IT WITH THE DATABASE
 
 
@@ -25,7 +24,7 @@ def captureNewFace():
 
     # Create the FaceDetector object, using the vision class with the options we made previously.
     facedetector = vision.FaceDetector.create_from_options(faceDetectorParameterOptions)
-
+    print("these lines above work")
     cap = cv2.VideoCapture(0)  # 0 stands for camera 0, so the first camera paired with the device.
 
     capturedFrame = None  # Initialize variable to avoid potential errors
@@ -45,14 +44,15 @@ def captureNewFace():
         if key == ord(' '):  # Capture frame on spacebar press
             capturedFrame = frame.copy()  # Make a copy of the current frame
             break
+    print("these lines above work iggg")
 
     cap.release()  # Release the camera when done capturing
     cv2.destroyAllWindows()  # Close all OpenCV windows
-
+    print("these lines above work iggg dont stop")
     if capturedFrame is not None:  # Ensure a frame was captured before proceeding
         # Save the captured frame to a file
-        cv2.imwrite("userFrame.jpg", capturedFrame)  # Don't forget in Python you can use stuff inside of loops outside of them.
-
+        cv2.imwrite("/Users/seandumont/Desktop/cpp-personal-project/bigOProject/userFrame.jpg", capturedFrame)  # Don't forget in Python you can use stuff inside of loops outside of them.
+        print("idk someting ")
         # Convert frame to RGB (MediaPipe requires RGB)
         convertedImage = cv2.cvtColor(capturedFrame, cv2.COLOR_BGR2RGB)  # CV2 does BGR, MediaPipe needs it in RGB
 
@@ -66,6 +66,8 @@ def captureNewFace():
         #detections: A list of Detection objects, each corresponding to a detected face.
         #bounding_box: Specifies the location of the detected face within the image.
         #categories: Contains a confidence score representing the probability that the detection is a face.
+        print("these lines above work iggg dont stop right before the upa")
+
         if detection_result.detections:
             for detection in detection_result.detections:
                 #we want to know the bounding box only for now so we will choose to work with that.
@@ -92,5 +94,3 @@ def captureNewFace():
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-if __name__ == "__main__":
-    captureNewFace()

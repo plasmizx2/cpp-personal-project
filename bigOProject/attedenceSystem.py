@@ -7,15 +7,15 @@ print("\n📌 Running Attendance System...\n")
 
 # Step 1: Process stored images (Detect & crop faces)
 convertPic2Crop.regular2Crop()
-print("THIS DEF WORKS")
+print("THIS DEF WORKS1")
 
 # Step 2: Capture a new face from the webcam
 captureFace.captureNewFace()
-print("THIS DEF WORKS")
+print("THIS DEF WORKS2")
 
 # Step 3: Compare the captured face with stored faces & log attendance
 matchFace.matchFace()
-print("THIS DEF WORKS")
+print("THIS DEF WORKS3")
 
 # Step 4: Display latest check-ins
 def showAttendanceLog():
