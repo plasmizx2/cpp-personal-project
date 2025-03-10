@@ -1,6 +1,5 @@
 import cv2
 import mediapipe as mp
-import requests
 import os
 
 
@@ -9,7 +8,7 @@ def regular2Crop():
     faceDetector = mpFaceDetection.FaceDetection(min_detection_confidence=.9)
 
     regEmployeePics = '/Users/seandumont/Desktop/cpp-personal-project/bigOProject/regularPics'
-    croppedEmployeePics = '/Users/seandumont/Desktop/cpp-personal-project/bigOProject/croppedPics'
+    croppedEmployeePics = '/Users/seandumont/Desktop/cpp-personal-project/c++ personal proj/UnconnHackAthon/knownFacesCropped'
 
     regdirectory = os.listdir(regEmployeePics) ## just use this so u can loop thru 
     
