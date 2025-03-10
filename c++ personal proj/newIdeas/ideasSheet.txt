@@ -1,0 +1,50 @@
+	13.	USB-Based Portable Work Environment – A bootable USB that loads a user’s preferred work environment (settings, tools, files) on any computer.
+	17.	One-Click Digital Receipts – A universal receipt management system that allows businesses to send digital receipts to users without requiring emails or apps.
+    4. Version Control for Personal Documents – A tool that tracks changes in documents (Word, PDFs, notes) similar to Git but for personal files.
+	6.	Personal VPN with Raspberry Pi – A plug-and-play device that automatically sets up a VPN at home and encrypts all traffic when connected.
+	3.	Physical Device Data Wipe on Unauthorized Access – A USB stick or external hard drive that automatically wipes itself if accessed without proper authentication.
+    11.	Local Bookmark Manager for Multiple Browsers – A lightweight app that syncs and manages bookmarks across different browsers without storing data online.
+    13.	Custom Macro Keypad for Workflow Automation – A small programmable keypad that can execute custom scripts and shortcuts for different applications.
+    18.	Simplified Online Subscription Manager – A browser extension that tracks and manages all your online subscriptions, helping users cancel unwanted ones easily.
+    12.	Portable Email Client on USB – A self-contained email client that runs from a USB drive and syncs only when plugged into a device.
+
+
+    Smart Job Application Tracker (SQL + APIs + FlutterFlow + ML)
+	•	What it does:
+	•	A FlutterFlow app where users can track job applications.
+	•	Uses LinkedIn or Indeed APIs to fetch job listings.
+	•	Stores job details, status, and deadlines in an SQL database.
+	•	AI-powered resume scanner that checks if a job matches your resume.
+
+    AI-Based Chatbot with SQL Logging (SQL + APIs + AI)
+	•	What it does:
+	•	A chatbot that interacts via API requests (e.g., OpenAI, Google Bard).
+	•	Logs user conversations in an SQL database for tracking.
+	•	AI analyzes past interactions and suggests better replies over time.
+
+
+    4. Voice-Controlled Smart Home Dashboard (FlutterFlow + APIs + ML)
+	•	What it does:
+	•	A FlutterFlow mobile app that controls smart devices (lights, thermostat, etc.).
+	•	Uses Google Assistant API or Home Assistant API.
+	•	AI learns patterns and suggests automation routines based on usage.
+
+⸻
+5. AI-Powered SQL Query Generator (SQL + AI)
+	•	What it does:
+	•	A tool that converts natural language into SQL queries.
+	•	Users type “Show me all users who signed up in March,” and the tool returns:
+
+
+
+	4.	Inventory Management System – A warehouse or small business tool that tracks stock levels using SQL queries.
+
+Recipe Generator – Fetches recipes from an API based on ingredients a user has.
+
+
+	4.	Music Playlist Generator – Uses Spotify API to create and modify playlists.
+
+
+	1.	Spam Email Detector – A model that classifies emails as spam or not based on text patterns.
+	5.	Fake News Detector – An ML model that determines if a news article is likely fake or real.
+	5.	AI-Based Document Summarizer – Takes long articles and summarizes them into key points.
