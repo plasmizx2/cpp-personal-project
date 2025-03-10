@@ -258,24 +258,27 @@ T** Array<T,length>::matrixChangeElements(T** matrix,int currentRow,int currentC
 
 }
 
+
 template<typename T, int length>
 T** Array<T,length>::transposeCurrentMatrix(T** oldMatrix,int oldRow,int oldColumn){
-int newRow = oldColumn;
-int newColumn = oldRow;
+    int newRow = oldColumn;
+    int newColumn = oldRow;
 
-T** newMatrix = new T*[newRow];
-for(int i = 0;i < newRow;i++){
-    newMatrix[i] = new T[newColumn];
-}
-//transpose it by using the old row and column to switch the i and j elemnts.
-for(int i = 0;i<oldRow;i++){
-    for(int j = 0;j<oldColumn;j++){
-        newMatrix[j][i] = oldMatrix[i][j] // to switch it you need to have the column and row switched of whatever was there for the old matrix!
+    T** newMatrix = new T*[newRow];
+    for(int i = 0;i < newRow;i++){
+        newMatrix[i] = new T[newColumn];
     }
-}
+    //transpose it by using the old row and column to switch the i and j elemnts.
+    for(int i = 0;i<oldRow;i++){
+        for(int j = 0;j<oldColumn;j++){
+            newMatrix[j][i] = oldMatrix[i][j] // to switch it you need to have the column and row switched of whatever was there for the old matrix!
+        }
+    }
 
-return newMatrix;
-}
+    return newMatrix;
+    }
+
+
 
 
 
@@ -298,59 +301,63 @@ int displayDataTypes(){
     return dataTypeChoice;
 }
 
-void arrayMenu() {
-int dataTypeChoice = displayDataTypes(); // Prompt user to select a data type
 
-switch (dataTypeChoice) {
-    case 0: {
-        std::cout << "You chose integers!\n";
-        Array<int, 100> intArray; // Create an integer array
-        intArray.makeAnArray();  // Initialize the array
-        arrayMenuOperations(intArray); // Pass it to operations menu
-        break;
+
+void arrayMenu() {
+    int dataTypeChoice = displayDataTypes(); // Prompt user to select a data type
+
+    switch (dataTypeChoice) {
+        case 0: {
+            std::cout << "You chose integers!\n";
+            Array<int, 100> intArray; // Create an integer array
+            intArray.makeAnArray();  // Initialize the array
+            arrayMenuOperations(intArray); // Pass it to operations menu
+            break;
+        }
+        case 1: {
+            std::cout << "You chose doubles!\n";
+            Array<double, 100> doubleArray; // Create a double array
+            doubleArray.makeAnArray();     // Initialize the array
+            arrayMenuOperations(doubleArray); // Pass it to operations menu
+            break;
+        }
+        case 2: {
+            std::cout << "You chose floats!\n";
+            Array<float, 100> floatArray; // Create a float array
+            floatArray.makeAnArray();    // Initialize the array
+            arrayMenuOperations(floatArray); // Pass it to operations menu
+            break;
+        }
+        case 3: {
+            std::cout << "You chose strings!\n";
+            Array<std::string, 100> stringArray; // Create a string array
+            stringArray.makeAnArray();          // Initialize the array
+            arrayMenuOperations(stringArray);   // Pass it to operations menu
+            break;
+        }
+        case 4: {
+            std::cout << "You chose characters!\n";
+            Array<char, 100> charArray; // Create a char array
+            charArray.makeAnArray();   // Initialize the array
+            arrayMenuOperations(charArray); // Pass it to operations menu
+            break;
+        }
+        case 5: {
+            std::cout << "Returning to main menu...\n";
+            return;
+        }
+        case 6: {
+            std::cout << "Exiting the program...\n";
+            exit(0);
+        }
+        default: {
+            std::cout << "Invalid choice! Please try again.\n";
+            break;
+        }
     }
-    case 1: {
-        std::cout << "You chose doubles!\n";
-        Array<double, 100> doubleArray; // Create a double array
-        doubleArray.makeAnArray();     // Initialize the array
-        arrayMenuOperations(doubleArray); // Pass it to operations menu
-        break;
     }
-    case 2: {
-        std::cout << "You chose floats!\n";
-        Array<float, 100> floatArray; // Create a float array
-        floatArray.makeAnArray();    // Initialize the array
-        arrayMenuOperations(floatArray); // Pass it to operations menu
-        break;
-    }
-    case 3: {
-        std::cout << "You chose strings!\n";
-        Array<std::string, 100> stringArray; // Create a string array
-        stringArray.makeAnArray();          // Initialize the array
-        arrayMenuOperations(stringArray);   // Pass it to operations menu
-        break;
-    }
-    case 4: {
-        std::cout << "You chose characters!\n";
-        Array<char, 100> charArray; // Create a char array
-        charArray.makeAnArray();   // Initialize the array
-        arrayMenuOperations(charArray); // Pass it to operations menu
-        break;
-    }
-    case 5: {
-        std::cout << "Returning to main menu...\n";
-        return;
-    }
-    case 6: {
-        std::cout << "Exiting the program...\n";
-        exit(0);
-    }
-    default: {
-        std::cout << "Invalid choice! Please try again.\n";
-        break;
-    }
-}
-}
+
+
 
 
 int matrixChoice(){
@@ -367,6 +374,8 @@ int matrixChoice(){
         return matrixChoice;
     }
 
+
+    
 
 int displayArrayMenu(){
     std::cout << "\n----- Array Operations Menu -----\n";
